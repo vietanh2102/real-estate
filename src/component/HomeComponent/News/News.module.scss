@@ -1,0 +1,168 @@
+.wrapper {
+    width: 100%;
+    margin: 24px 0;
+    padding: 0 16px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.homenews {
+    width: 100%;
+    margin-right: 0;
+}
+
+.homenews-container {
+    width: calc(100% + 32px);
+    margin: 0px -16px 16px;
+    overflow: hidden;
+
+}
+
+.hometabs {
+    position: relative;
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    height: auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: calc(100% + 32px);
+        height: 2px;
+        background-color: #F2F2F2;
+    }
+
+}
+
+.hometabs::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+}
+
+.hometabs-item {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    font-weight: bold;
+    padding: 12px 16px;
+    color: #999;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -.2px;
+
+    &:hover {
+        color: #2C2C2C;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    &::before {
+        content: " ";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 0;
+        height: 2px;
+        background-color: #FF3800;
+        transition: 400ms ease-in-out;
+    }
+}
+
+.active {
+    color: #2C2C2C;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: #FF3800;
+        transition: 400ms ease-in-out;
+    }
+}
+
+.news {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.banner {
+    display: none;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .hometabs {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .hometabs-item {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+}
+
+@media only screen and (min-width: 767px) {
+    .wrapper {
+        padding: 0 32px;
+    }
+
+    .hometabs {
+        width: 100%;
+        margin-right: 0;
+
+        &::before {
+            width: 100%;
+        }
+    }
+
+    .homenews-container {
+        width: 100%;
+
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .container {
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width: 1180px) {
+    .container {
+        width: 1140px;
+    }
+
+    .homenews {
+        width: 848px;
+        margin-right: 0;
+    }
+
+    .banner {
+        display: block;
+        margin: auto;
+        width: 260px;
+    }
+
+}
