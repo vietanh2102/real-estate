@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+.title {
+    margin: 16px auto;
+    width: calc(100vw - 64px);
+    font-size: 20px;
+}
+
 .place {
     width: calc(100vw - 64px);
     margin: auto;
@@ -86,6 +92,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .title {
+        margin: 16px auto;
+        font-size: 1.17em;
+    }
 
     .place {
         width: calc(100vw - 64px);

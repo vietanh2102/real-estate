@@ -20,7 +20,6 @@ function ListNew({ newTitle }: any) {
                     <Swiper
                         spaceBetween={50}
                         centeredSlides={true}
-                        loop={true}
                         autoplay={{
                             delay: 3000,
                             disableOnInteraction: false,
@@ -49,12 +48,10 @@ function ListNew({ newTitle }: any) {
                 </div>
             </div>
             <div className={cx("listnews-mobile")}>
-                {data?.map(item => (
-                    <div key={item.id} className={cx('new-mobile')}>
-                        <div className={cx('new__item')}>
-                            <img src={item.img} alt='err' />
-                            <span>{item.name}</span>
-                        </div>
+                {listNews?.map(item => (
+                    <div key={item.id} className={cx('new__item')}>
+                        <img src={item.img} alt='err' />
+                        <span>{item.name}</span>
                     </div>
                 ))}
             </div>

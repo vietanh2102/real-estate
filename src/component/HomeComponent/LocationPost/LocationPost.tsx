@@ -53,64 +53,74 @@ function LocationPost() {
     }, 3000);
     return (
         <div className={cx("container")}>
-            <h3>Bất động sản theo địa điểm</h3>
+            <h3 className={cx("title")}>Bất động sản theo địa điểm</h3>
             <div className={cx("place")}>
                 <div className={cx("big-place")}>
                     <div className={cx("place-item")}>
                         {imgSlice[0].bg.map((item, index) => (
-                            <><span className={cx('place-name')}>Hà Nội</span><div
-                                key={index}
-                                className={cx("slice", index === id ? "active" : "")}
-                            >
-                                <img src={item} alt='err' />
-                            </div></>
+                            <div key={index}>
+                                <span className={cx('place-name')}>Hà Nội</span>
+                                <div
+                                    className={cx("slice", index === id ? "active" : "")}
+                                >
+                                    <img src={item} alt='err' />
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
                 <div className={cx("small-place")}>
                     <div className={cx("place-item")}>
                         {imgSlice[1].bg.map((item, index) => (
-                            <><span className={cx('place-name')}>Tp Hồ Chí Minh</span><div
-                                key={index}
-                                className={cx("slice", index === id ? "active" : "")}
-                            >
-                                <img src={item} alt='err' />
-                            </div></>
+                            <div key={index}>
+                                <span className={cx('place-name')}>Tp. Hồ Chí Minh</span>
+                                <div
+                                    className={cx("slice", index === id ? "active" : "")}
+                                >
+                                    <img src={item} alt='err' />
+                                </div>
+                            </div>
                         ))}
                     </div>
                     <div className={cx("place-item")}>
                         {imgSlice[2].bg.map((item, index) => (
-                            <><span className={cx('place-name')}>Đà Nẵng</span><div
-                                key={index}
-                                className={cx("slice", index === id ? "active" : "")}
-                            >
-                                <img src={item} alt='err' />
-                            </div></>
+                            <div key={index}>
+                                <span className={cx('place-name')}>Đà Nẵng</span>
+                                <div
+                                    className={cx("slice", index === id ? "active" : "")}
+                                >
+                                    <img src={item} alt='err' />
+                                </div>
+                            </div>
                         ))}
                     </div>
                     <div className={cx("place-item")}>
                         {imgSlice[3].bg.map((item, index) => (
-                            <><span className={cx('place-name')}>Bình Dương</span><div
-                                key={index}
-                                className={cx("slice", index === id ? "active" : "")}
-                            >
-                                <img src={item} alt='err' />
-                            </div></>
+                            <div key={index} >
+                                <span className={cx('place-name')}>Bình Dương</span>
+                                <div
+                                    className={cx("slice", index === id ? "active" : "")}
+                                >
+                                    <img src={item} alt='err' />
+                                </div>
+                            </div>
                         ))}
                     </div>
                     <div className={cx("place-item")}>
                         {imgSlice[4].bg.map((item, index) => (
-                            <><span className={cx('place-name')}>Hoài Đức</span><div
-                                key={index}
-                                className={cx("slice", index === id ? "active" : "")}
-                            >
-                                <img src={item} alt='err' />
-                            </div></>
+                            <div key={index}>
+                                <span className={cx('place-name')}>Hoài Đức</span>
+                                <div
+                                    className={cx("slice", index === id ? "active" : "")}
+                                >
+                                    <img src={item} alt='err' />
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

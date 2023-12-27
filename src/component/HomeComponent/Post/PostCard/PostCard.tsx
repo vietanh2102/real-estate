@@ -18,7 +18,8 @@ const PostCard: React.FC<ChildComponentProps> = (props) => {
             </div>
             <div className={cx("card-info")}>
                 <h1>
-                    {post.title.length < 80 ? post.title : post.title.slice(0, 75).padEnd(79, "...")}
+                    {/* {post.title.length < 80 ? post.title : post.title.slice(0, 75).padEnd(79, "...")} */}
+                    {post.title}
                 </h1>
                 <div className={cx("card-location")}>
                     <FontAwesomeIcon icon={faLocationDot} />
