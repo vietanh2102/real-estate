@@ -10,6 +10,7 @@ function App() {
   return (
 
     <div>
+      <h1>hellle</h1>
       <Router>
         <Routes>
           {publicRoutes.map((route, index) => {
