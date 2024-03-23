@@ -1,0 +1,20 @@
+@import url(https://db.onlinewebfonts.com/c/4e9a39f60cd3fbae96889bc7f03013f4?family=Lexend+Medium);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body {
+    /* font-family: 'Nunito Sans', sans-serif; */
+    font-family: "Lexend Medium", Roboto, Arial !important;
+    font-size: 1.4em;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}

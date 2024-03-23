@@ -1,0 +1,98 @@
+.container {
+    background: rgb(250, 250, 250);
+    padding: 32px;
+    margin: auto;
+}
+
+.title {
+    font-size: 20px;
+    padding: 32px 0;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: grid;
+
+    gap: 30px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    :hover {
+        transform: translateY(-20px);
+        transition: 400ms ease;
+    }
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.btn {
+    position: relative;
+    padding: 13px 32px;
+    border: solid 1px #ccc;
+    background: #FFF;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        transform: scaleX(0);
+        background-color: #fc3800;
+        transform-origin: right;
+        transition: transform 0.5s;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #FFF;
+
+        &:before {
+            width: 100%;
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .wrapper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (min-width: 1248px) {
+    .title {
+        font-size: 1.17em;
+        width: 1140px;
+        margin: auto;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 1140px;
+        margin: auto;
+    }
+}
