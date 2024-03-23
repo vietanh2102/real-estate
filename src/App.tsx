@@ -1,5 +1,5 @@
 import { publicRoutes } from "./routes"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import DefaultLayout from "./layout/DefaultLayout"
 import { Fragment } from 'react';
 
