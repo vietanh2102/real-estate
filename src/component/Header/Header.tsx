@@ -14,6 +14,8 @@ import {
 }
     from '@fortawesome/free-solid-svg-icons'
 import FilterTitle from './Component/Filter/Filter';
+import WrapperPopup from '../Popup/WrapperPopup';
+import { filterGround, filterLocation, filterTitlePrice } from '../../constant/array';
 const cx = classNames.bind(styles)
 function Header() {
     const condition: boolean[] = [true, false]
@@ -48,6 +50,18 @@ function Header() {
             document.body.style.overflowY = "scroll"
         }
     }, [showMenu]);
+    const [filterPrice, setFilterPrice] = useState(false)
+    const [filterShowGround, setFilterShowGround] = useState(false)
+    const [filterShowLoction, setFilterShowLocation] = useState(false)
+    const setShow = [setFilterPrice, setFilterShowGround, setFilterShowLocation]
+    const [titleLocation, setTitleLocation] = useState('')
+    const [titlePrice, setTitlePrice] = useState('')
+    const [titleGround, setTitleGround] = useState('')
+    const handleClickReset = () => {
+        setTitleLocation('')
+        setTitlePrice('')
+        setTitleGround('')
+    }
     return (
         <div className={cx('header')}>
             <div className={cx('navbar')}>
@@ -175,12 +189,77 @@ function Header() {
                         </div>
                         <div className={cx("filter")}>
                             <div className={cx("filter-box")}>
-                                <FilterTitle title='Trên toàn quốc' />
-                                <FilterTitle title='Mức giá' />
-                                <FilterTitle title='Diện tích' />
-                                <FilterTitle title='Lọc thêm' />
+                                <div>
+                                    <div
+                                        onClick={() => {
+                                            setFilterPrice(false),
+                                                setFilterShowGround(false),
+                                                setFilterShowLocation(!filterShowLoction)
+                                        }}
+                                        className={cx("filter-item")}
+                                    >
+                                        <FilterTitle title={titleLocation || 'Trên Toàn Quốc'} />
+                                    </div>
+
+                                    <div className={cx("popup")}>
+                                        <WrapperPopup
+                                            condition={filterShowLoction}
+                                            filter={filterLocation}
+                                            setTitle={setTitleLocation}
+                                            setShow={setShow}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        onClick={() => {
+                                            setFilterPrice(!filterPrice),
+                                                setFilterShowGround(false),
+                                                setFilterShowLocation(false)
+                                        }}
+                                        className={cx("filter-item")}
+                                    >
+                                        <FilterTitle title={titlePrice || 'Mức giá'} />
+                                    </div>
+
+                                    <div className={cx("popup")}>
+                                        <WrapperPopup
+                                            condition={filterPrice}
+                                            filter={filterTitlePrice}
+                                            setTitle={setTitlePrice}
+                                            setShow={setShow}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        onClick={() => {
+                                            setFilterShowGround(!filterShowGround),
+                                                setFilterPrice(false),
+                                                setFilterShowLocation(false)
+                                        }}
+                                        className={cx("filter-item")}
+                                    >
+                                        <FilterTitle title={titleGround || 'Diện tích'} />
+                                    </div>
+
+                                    <div className={cx("popup")}>
+                                        <WrapperPopup
+                                            condition={filterShowGround}
+                                            filter={filterGround}
+                                            setTitle={setTitleGround}
+                                            setShow={setShow}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <FilterTitle title='Lọc thêm' />
+                                </div>
                             </div>
-                            <div className={cx("reset")}>
+                            <div
+                                className={cx("reset")}
+                                onClick={() => handleClickReset()}
+                            >
                                 <FontAwesomeIcon icon={faArrowRotateLeft} />
                                 <span>Đặt lại</span>
                             </div>

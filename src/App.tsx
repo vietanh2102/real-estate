@@ -3,14 +3,10 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import DefaultLayout from "./layout/DefaultLayout"
 import { Fragment } from 'react';
 
-
-
-
 function App() {
   return (
 
     <div>
-      <h1>hellle</h1>
       <Router>
         <Routes>
           {publicRoutes.map((route, index) => {

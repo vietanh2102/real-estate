@@ -18,6 +18,10 @@ interface Description {
     title: string,
     description: string
 }
+export interface Filter {
+    title: string,
+    value: string
+}
 export const brandItem: BrandItem[] = [
     {
         id: 0,
@@ -141,5 +145,95 @@ export const description: Description[] = [
         img: 'https://staticfile.batdongsan.com.vn/images/box-link-footer/Wiki.svg',
         title: 'Wiki BĐS',
         description: 'Ngoài cập nhật những biến động thị trường, chúng tôi còn cung cấp kiến ​​thức, kinh nghiệm về mua bán, cho thuê, đầu tư, vay mua nhà, phong thủy, thiết kế nhà, mọi thông tin cần thiết để dẫn lối người tìm nhà tìm thấy căn nhà mơ ước.'
+    }
+]
+export const filterTitlePrice: Filter[] = [
+    {
+        title: "Mức giá",
+        value: "0"
+    },
+    {
+        title: "Dưới 500tr",
+        value: "500000000"
+    },
+    {
+        title: "Dưới 1tỷ",
+        value: "1000000000"
+    },
+    {
+        title: "1-2 tỷ",
+        value: "1000000000"
+    },
+    {
+        title: "3-5 tỷ",
+        value: "3000000000"
+    },
+    {
+        title: "5-10 tỷ",
+        value: "5000000000"
+    },
+    {
+        title: "Trên 10 tỷ",
+        value: "10000000000"
+    },
+]
+export const filterGround: Filter[] = [
+    {
+        title: "Diện tích",
+        value: "0"
+    },
+    {
+        title: "Dưới 30 m²",
+        value: "30"
+    },
+    {
+        title: "Dưới 50 m²",
+        value: "50"
+    },
+    {
+        title: "50-80 m²",
+        value: "50"
+    },
+    {
+        title: "80-100 m²",
+        value: "80"
+    },
+    {
+        title: "100-150 m²",
+        value: "100"
+    },
+    {
+        title: "150-200 m²",
+        value: "150"
+    },
+    {
+        title: "Trên 200 m²",
+        value: "200"
+    }
+]
+export const filterLocation: Filter[] = [
+    {
+        title: "Trên Toàn Quốc",
+        value: ""
+    },
+    {
+        title: "Hà Nội",
+        value: "Hà Nội"
+    },
+    {
+        title: "TP Hồ Chí Minh",
+        value: "TP Hồ Chí Minh"
+    },
+    {
+        title: "Tp Đà Nẵng",
+        value: "Tp Đà Nẵng"
+    },
+    {
+        title: "Tp Bình Dương",
+        value: "Tp Bình Dương"
+    },
+    {
+        title: "Tp Đà Lạt",
+        value: "Tp Đà Lạt"
     }
 ]
