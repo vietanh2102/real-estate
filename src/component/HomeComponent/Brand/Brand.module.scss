@@ -1,32 +1,76 @@
-.swiper-container {
-    width: 100%;
+.brand {
+    max-width: 1140px;
+    transform: translateY(50px);
+    opacity: 0;
     overflow: hidden;
-    display: flex;
+    position: relative;
+    transition: all 500ms ease-in;
 }
 
-.swiper-item {
-    width: 118px !important;
-    height: 64px;
-    border: 1px solid #F2F2F2;
-    box-shadow: 0px 4px 6px rgba(44, 44, 44, 0.04);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
+.title {
+    margin: 32px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-    img {
-        max-width: 102px;
-        max-height: 44px;
-        margin: auto;
-    }
+.swiper {
+    position: relative;
+}
+
+.next,
+.previous {
+    display: none;
+}
+
+.previous {
+    bottom: 50%;
+    right: 0;
+}
+
+.onView {
+    width: 100%;
+    opacity: 1;
+    margin: 32px auto;
+    transform: translateY(0);
 }
 
 @media only screen and (min-width: 768px) {
-    .swiper-item {
-        width: 165px !important;
-        height: 110px;
+    .brand {
+        margin: 32px 0;
+    }
+
+    .title {
+        margin: 32px;
+        font-size: 1.17em;
+    }
+
+    .swiper {
+        padding: 0 0 0 42px;
+    }
+
+}
+
+@media only screen and (min-width: 1204px) {
+    .brand {
+        max-width: 1140px;
+        margin: 32px 0;
+    }
+
+
+    .next,
+    .previous {
+        position: absolute;
+        top: calc(50% - 32px);
+        width: 32px;
+        height: calc(100% - 42px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+
+        &:hover {
+            background-color: #99999999
+        }
     }
 }

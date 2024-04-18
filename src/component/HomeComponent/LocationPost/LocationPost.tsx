@@ -1,89 +1,45 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './LocationPost.module.scss'
 import classNames from 'classnames/bind';
-import { imgSlice } from '../../../constant/array';
 
+import styles from './LocationPost.module.scss'
+import { imgSlice } from '../../../constant/array';
+import BgSlice from './Component/BgSlice';
+import { IsIntoView } from '../../../hooks/IsIntoView';
 
 const cx = classNames.bind(styles)
 function LocationPost() {
-    const [id, setId] = useState<number>(0)
+    const bigPlaceRef = useRef<HTMLDivElement>(null)
+    const smallPlaceRef = useRef<HTMLDivElement>(null)
+    const [isViewSmallPlace, setIsViewSmallPlace] = useState(false)
+    const [isIntoView, setIsIntoView] = useState(false)
     useEffect(() => {
-        const setImg = setTimeout(() => {
-            id < 2 ? setId(id + 1) : setId(0)
-        }, 3000);
-        return () => clearTimeout(setImg)
-    })
-
-    const locationRef = useRef<HTMLDivElement>(null)
-    // const locationHeith = locationRef.current?.clientHeight
-    // const condition = useState(false)
+        const handleScroll = () => {
+            IsIntoView(bigPlaceRef, setIsIntoView)
+            IsIntoView(smallPlaceRef, setIsViewSmallPlace)
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
     return (
-        <div ref={locationRef} className={cx("container")}>
+        <div className={cx("container")}>
             <h3 className={cx("title")}>Bất động sản theo địa điểm</h3>
             <div className={cx("place")}>
-                <div className={cx("big-place")}>
-                    <div className={cx("place-item")}>
-                        {imgSlice[0].bg.map((item, index) => (
-                            <div key={index}>
-                                <span className={cx('place-name')}>Hà Nội</span>
-                                <div
-                                    className={cx("slice", index === id ? "active" : "")}
-                                >
-                                    <img loading='lazy' src={item} alt='err' />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                <div
+                    ref={bigPlaceRef}
+                    className={cx("big-place", isIntoView ? 'onView' : '')}
+                >
+                    <BgSlice imgSlice={imgSlice[0]} />
                 </div>
-                <div className={cx("small-place")}>
-                    <div className={cx("place-item")}>
-                        {imgSlice[1].bg.map((item, index) => (
-                            <div key={index}>
-                                <span className={cx('place-name')}>Tp. Hồ Chí Minh</span>
-                                <div
-                                    className={cx("slice", index === id ? "active" : "")}
-                                >
-                                    <img src={item} alt='err' />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className={cx("place-item")}>
-                        {imgSlice[2].bg.map((item, index) => (
-                            <div key={index}>
-                                <span className={cx('place-name')}>Đà Nẵng</span>
-                                <div
-                                    className={cx("slice", index === id ? "active" : "")}
-                                >
-                                    <img src={item} alt='err' />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className={cx("place-item")}>
-                        {imgSlice[3].bg.map((item, index) => (
-                            <div key={index} >
-                                <span className={cx('place-name')}>Bình Dương</span>
-                                <div
-                                    className={cx("slice", index === id ? "active" : "")}
-                                >
-                                    <img src={item} alt='err' />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className={cx("place-item")}>
-                        {imgSlice[4].bg.map((item, index) => (
-                            <div key={index}>
-                                <span className={cx('place-name')}>Hoài Đức</span>
-                                <div
-                                    className={cx("slice", index === id ? "active" : "")}
-                                >
-                                    <img src={item} alt='err' />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                <div
+                    ref={smallPlaceRef}
+                    className={cx("small-place", isViewSmallPlace ? 'onView' : '')}
+                >
+                    <BgSlice imgSlice={imgSlice[1]} />
+                    <BgSlice imgSlice={imgSlice[2]} />
+                    <BgSlice imgSlice={imgSlice[3]} />
+                    <BgSlice imgSlice={imgSlice[4]} />
                 </div>
             </div>
         </div >

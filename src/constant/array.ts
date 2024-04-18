@@ -1,18 +1,18 @@
-interface BrandItem {
+export interface BrandItem {
     id: number,
     href: string,
     src: string
 }
-interface ImgSlice {
+export interface ImgSlice {
     bg: string[],
     location: string
 }
-interface TitleNews {
+export interface TitleNews {
     id: number,
     title: string,
     active: boolean
 }
-interface Description {
+export interface Description {
     id: number,
     img: string,
     title: string,

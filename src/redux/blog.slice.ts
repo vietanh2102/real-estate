@@ -9,7 +9,8 @@ const initialState: BlogState = {
 const postsSlice = createSlice({
     name: 'blog',
     initialState,
-    reducers: {}
+    reducers: {
+    }
 })
 const blogReducer = postsSlice.reducer
 export default blogReducer

@@ -9,39 +9,18 @@ import {
     faArrowRotateLeft,
     faBars,
     faHeart,
-    faMagnifyingGlass,
     faXmark
 }
     from '@fortawesome/free-solid-svg-icons'
 import FilterTitle from './Component/Filter/Filter';
 import WrapperPopup from '../Popup/WrapperPopup';
 import { filterGround, filterLocation, filterTitlePrice } from '../../constant/array';
+import InputSearch from './Component/InputSearch/InputSearch';
 const cx = classNames.bind(styles)
 function Header() {
     const condition: boolean[] = [true, false]
     const [active, setActive] = useState(condition)
     const [showMenu, setShowMenu] = useState(false)
-    const [introIndex, setIntroIndex] = useState(0)
-    const intro = [
-        'Khu đô thị Nam An Khánh',
-        'BDS Hoai Duc',
-        'BDS Ha Noi'
-    ]
-    const [placeholder, setPlaceholder] = useState('')
-    const [placeholderIndex, setPlaceholderIndex] = useState(0);
-    // a typewriting animation in a placeholder
-    useEffect(() => {
-        setPlaceholder(intro[introIndex].slice(0, placeholderIndex))
-        const play = setTimeout(() => {
-            if (placeholderIndex + 1 > intro[introIndex].length) {
-                introIndex + 1 === intro.length ? setIntroIndex(0) : setIntroIndex(introIndex + 1)
-                setPlaceholderIndex(0)
-            } else {
-                setPlaceholderIndex(placeholderIndex + 1)
-            }
-        }, 120)
-        return () => clearTimeout(play)
-    },)
     //block scroll when open menu
     useEffect(() => {
         if (showMenu) {
@@ -97,14 +76,7 @@ function Header() {
                         </div>
                         <div className={cx("menu-list", showMenu && "show")}>
                             <div className={cx("input-box")}>
-                                <div className={cx("search-input")}>
-                                    <input
-                                        placeholder={placeholder}
-                                    />
-                                    <button>
-                                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                                    </button>
-                                </div>
+                                <InputSearch />
                             </div>
                             <ul className={cx('navbar-menu')}>
                                 <li
@@ -177,15 +149,7 @@ function Header() {
                     </div>
                     <div className={cx("search-conten")}>
                         <div className={cx("input-box")}>
-                            <div className={cx("search-input")}>
-                                <input
-                                    placeholder={placeholder}
-                                />
-                                <button>
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                                    <span>Tìm kiếm</span>
-                                </button>
-                            </div>
+                            <InputSearch />
                         </div>
                         <div className={cx("filter")}>
                             <div className={cx("filter-box")}>
