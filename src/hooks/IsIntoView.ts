@@ -4,6 +4,6 @@ export const IsIntoView = (ref: React.RefObject<HTMLElement>,
     if (!rect) {
         return
     } else {
-        rect.top < window.innerHeight - 100 ? setIsIntoView(true) : setIsIntoView(false)
+        rect.top < window.innerHeight ? setIsIntoView(true) : setIsIntoView(false)
     }
 }

@@ -14,8 +14,8 @@ function Home() {
             <News />
             <LocationPost />
             <Post />
-            <Brand />
             <Intro />
+            <Brand />
         </div>
     );
 }

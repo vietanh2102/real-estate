@@ -4,21 +4,42 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import classNames from "classnames/bind";
 import styles from './PostCard.module.scss'
 import { Post } from "../../../../types/PostType";
-interface ChildComponentProps {
-    posts: Post,
+import { useEffect, useRef, useState } from 'react';
+import { IsIntoView } from '../../../../hooks/IsIntoView';
+interface Props {
+    post: Post,
 }
 
 const cx = classNames.bind(styles)
-const PostCard: React.FC<ChildComponentProps> = (props) => {
-    const post = props.posts
+const PostCard = ({ post }: Props) => {
+    const sceenWidth = window.innerWidth
+    let delay
+    if (sceenWidth > 1247) { delay = post.id % 4 }
+    else if (sceenWidth > 1023) { delay = post.id % 3 }
+    else if (sceenWidth > 767) { delay = post.id % 2 }
+    else { delay = 0 }
+
+    const ref = useRef<HTMLDivElement>(null)
+    const [isView, setIsView] = useState(false)
+    useEffect(() => {
+        const handleScroll = () => {
+            IsIntoView(ref, setIsView)
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [])
     return (
-        <div className={cx("card")}>
+        <div
+            ref={ref}
+            className={cx(`card`, isView ? `onView` : "", `delay-${delay}`)}
+        >
             <div className={cx("card-img")}>
                 <img src={post.img[0]} alt="err" />
             </div>
             <div className={cx("card-info")}>
                 <h1>
-                    {/* {post.title.length < 80 ? post.title : post.title.slice(0, 75).padEnd(79, "...")} */}
                     {post.title}
                 </h1>
                 <div className={cx("card-location")}>

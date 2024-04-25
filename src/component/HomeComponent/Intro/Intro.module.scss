@@ -17,13 +17,29 @@
     opacity: 0;
     transform: translateY(80px);
     transition: all 500ms;
-    animation-delay: 5000ms;
+    // transition-delay: 2s;
 }
 
 
 .onView {
     opacity: 1;
     transform: translateY(0);
+}
+
+.delay-0 {
+    transition-delay: 0;
+}
+
+.delay-1 {
+    transition-delay: 50ms;
+}
+
+.delay-2 {
+    transition-delay: 100ms;
+}
+
+.delay-3 {
+    transition-delay: 150ms;
 }
 
 .item-img {
