@@ -5,6 +5,7 @@ import { A11y, Navigation, Pagination } from 'swiper/modules';
 import { description } from '../../constant/array';
 // Import Swiper styles
 import "swiper/swiper-bundle.css";
+import { CSSProperties } from 'react';
 
 const cx = classNames.bind(styles)
 function BoxMobile() {
@@ -15,7 +16,7 @@ function BoxMobile() {
                 style={{
                     "--swiper-pagination-bottom": "-10px",
                     "--swiper-pagination-color": "#E03C31"
-                }}
+                } as CSSProperties}
                 pagination={{
                     clickable: true
                 }}
