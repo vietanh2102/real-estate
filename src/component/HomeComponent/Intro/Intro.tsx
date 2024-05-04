@@ -7,7 +7,7 @@ import styles from './Intro.module.scss'
 import { description } from '../../../constant/array';
 import { useEffect, useRef, useState } from 'react';
 import { IsIntoView } from '../../../hooks/IsIntoView';
-import BoxMobile from '../../Popup/BoxMobile';
+import BoxMobile from '../../BoxMobile/BoxMobile';
 const cx = classNames.bind(styles)
 function Intro() {
     const [isIntoViewTitle, setIsIntoViewTitle] = useState(false)

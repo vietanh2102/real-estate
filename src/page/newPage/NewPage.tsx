@@ -18,15 +18,15 @@ const cx = classNames.bind(styles)
 function NewPage() {
     const { id } = useParams()
     const [news, setNews] = useState<Post>()
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
     useEffect(() => {
         const getNew = async () => {
-            setLoading(true)
+            // setLoading(true)
             const res = await fetch(`https://r2c5kp-8080.csb.app/estates/${id}`);
             const data = await res.json();
             setNews(data);
-            setLoading(false)
+            // setLoading(false)
         }
         getNew()
     }, [])
@@ -38,10 +38,6 @@ function NewPage() {
                 <div className={cx('thumb-gallery')}>
                     <div className={cx('swiper-slice1')}>
                         <Swiper
-                            style={{
-                                '--swiper-navigation-color': 'black',
-                                '--swiper-pagination-color': 'black',
-                            }}
                             spaceBetween={10}
                             navigation={true}
                             pagination={{

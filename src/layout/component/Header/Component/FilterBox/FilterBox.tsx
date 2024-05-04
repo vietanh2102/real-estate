@@ -5,15 +5,15 @@ import { useState } from 'react'
 import styles from './FilterBox.module.scss'
 import classNames from 'classnames/bind'
 import FilterTitle from '../FilterItem/FilterItem'
-import WrapperPopup from '../../../../../component/Popup/BoxMobile'
-import { filterGround, filterLocation, filterTitlePrice } from '../../../../../constant/array'
+// import WrapperPopup from '../../../../../component/BoxMobile/BoxMobile'
+// import { filterGround, filterLocation, filterTitlePrice } from '../../../../../constant/array'
 
 const cx = classNames.bind(styles)
 function FilterBox() {
     const [filterPrice, setFilterPrice] = useState(false)
     const [filterShowGround, setFilterShowGround] = useState(false)
     const [filterShowLoction, setFilterShowLocation] = useState(false)
-    const setShow = [setFilterPrice, setFilterShowGround, setFilterShowLocation]
+    // const setShow = [setFilterPrice, setFilterShowGround, setFilterShowLocation]
     const [location, setLocation] = useState('')
     const [price, setPrice] = useState('')
     const [ground, setGround] = useState('')
@@ -37,14 +37,14 @@ function FilterBox() {
                         <FilterTitle title={location || 'Trên Toàn Quốc'} />
                     </div>
 
-                    <div className={cx("popup")}>
+                    {/* <div className={cx("popup")}>
                         <WrapperPopup
                             condition={filterShowLoction}
                             filter={filterLocation}
                             setTitle={setLocation}
                             setShow={setShow}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <div
@@ -58,14 +58,14 @@ function FilterBox() {
                         <FilterTitle title={price || 'Mức giá'} />
                     </div>
 
-                    <div className={cx("popup")}>
+                    {/* <div className={cx("popup")}>
                         <WrapperPopup
                             condition={filterPrice}
                             filter={filterTitlePrice}
                             setTitle={setPrice}
                             setShow={setShow}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <div
@@ -79,14 +79,14 @@ function FilterBox() {
                         <FilterTitle title={ground || 'Diện tích'} />
                     </div>
 
-                    <div className={cx("popup")}>
+                    {/* <div className={cx("popup")}>
                         <WrapperPopup
                             condition={filterShowGround}
                             filter={filterGround}
                             setTitle={setGround}
                             setShow={setShow}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <FilterTitle title='Lọc thêm' />
