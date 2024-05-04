@@ -28,15 +28,17 @@ function InputSearch() {
         return () => clearTimeout(play)
     },)
     return (
-        <div className={cx("search-input")}>
-            <input
-                placeholder={placeholder}
-            />
-            <button>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                <span>Tìm kiếm</span>
-            </button>
-        </div>
+        <div className={cx("input-box")}>
+            <div className={cx("search-input")}>
+                <input
+                    placeholder={placeholder}
+                />
+                <button>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <span>Tìm kiếm</span>
+                </button>
+            </div>
+        </div >
     );
 }
 

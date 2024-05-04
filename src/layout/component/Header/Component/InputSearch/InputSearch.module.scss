@@ -12,7 +12,7 @@
         font-size: 14px;
         line-height: 20px;
         border-radius: 8px;
-        background-color: #F2F2F2;
+        background-color: rgba(0, 0, 0, 0.1);
     }
 
     button {
@@ -41,7 +41,27 @@
     }
 }
 
-@media (min-w) {
+@media(min-width:768px) {
+    .search-input {
+        input {
+            padding: 15px 12px;
+        }
+
+        button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            bottom: 8px;
+            height: 34px;
+
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width:1024px) {
     .search-input {
         position: relative;
         display: flex;
@@ -81,23 +101,8 @@
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: normal !important;
+                display: inline-block;
             }
-        }
-    }
-}
-
-@media(min-width:768px) {
-    .search-input {
-        input {
-            padding: 15px 12px;
-        }
-
-        button {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            bottom: 8px;
-            height: 34px;
         }
     }
 }

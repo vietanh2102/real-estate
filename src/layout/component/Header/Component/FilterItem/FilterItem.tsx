@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind'
-import styles from "./Filter.module.scss"
+import styles from "./FilterItem.module.scss"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 interface Props {

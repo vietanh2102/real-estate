@@ -22,6 +22,11 @@ export interface Filter {
     title: string,
     value: string
 }
+export interface DetailEstateType {
+    src: string,
+    title: string,
+    value: string
+}
 export const brandItem: BrandItem[] = [
     {
         id: 0,

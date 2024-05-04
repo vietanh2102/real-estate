@@ -6,6 +6,7 @@ import styles from './PostCard.module.scss'
 import { Post } from "../../../../types/PostType";
 import { useEffect, useRef, useState } from 'react';
 import { IsIntoView } from '../../../../hooks/IsIntoView';
+import { Link } from 'react-router-dom';
 interface Props {
     post: Post,
 }
@@ -31,23 +32,25 @@ const PostCard = ({ post }: Props) => {
         };
     }, [])
     return (
-        <div
-            ref={ref}
-            className={cx(`card`, isView ? `onView` : "", `delay-${delay}`)}
-        >
-            <div className={cx("card-img")}>
-                <img src={post.img[0]} alt="err" />
-            </div>
-            <div className={cx("card-info")}>
-                <h1>
-                    {post.title}
-                </h1>
-                <div className={cx("card-location")}>
-                    <FontAwesomeIcon icon={faLocationDot} />
-                    <span>{post.location}</span>
+        <Link to={`news/${post.id}`}>
+            <div
+                ref={ref}
+                className={cx(`card`, isView ? `onView` : "", `delay-${delay}`)}
+            >
+                <div className={cx("card-img")}>
+                    <img src={post.img[0]} alt="err" />
+                </div>
+                <div className={cx("card-info")}>
+                    <h1>
+                        {post.title}
+                    </h1>
+                    <div className={cx("card-location")}>
+                        <FontAwesomeIcon icon={faLocationDot} />
+                        <span>{post.location}</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 export default PostCard;

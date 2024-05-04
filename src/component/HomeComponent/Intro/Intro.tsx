@@ -1,27 +1,23 @@
 import classNames from 'classnames/bind'
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import "swiper/css/bundle";
-import { Pagination, Navigation, A11y } from 'swiper/modules';
 
 import styles from './Intro.module.scss'
 import { description } from '../../../constant/array';
 import { useEffect, useRef, useState } from 'react';
 import { IsIntoView } from '../../../hooks/IsIntoView';
+import BoxMobile from '../../Popup/BoxMobile';
 const cx = classNames.bind(styles)
-declare module 'react' {
-    interface CSSProperties {
-        [key: `--${string}`]: string | number
-    }
-}
 function Intro() {
-
+    const [isIntoViewTitle, setIsIntoViewTitle] = useState(false)
     const [isIntoView, setIsIntoView] = useState(false)
-    const ref = useRef(null)
+    const refPost = useRef(null)
+    const refTitle = useRef(null)
     useEffect(() => {
         const handleScroll = () => {
-            IsIntoView(ref, setIsIntoView)
+            IsIntoView(refPost, setIsIntoView)
+            IsIntoView(refTitle, setIsIntoViewTitle)
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -31,13 +27,19 @@ function Intro() {
     return (
         <div className={cx("intro")}>
             <div className={cx("box")}>
+                <h1
+                    ref={refTitle}
+                    className={cx('title', isIntoViewTitle ? "onView" : "")}
+                >
+                    Dịch vụ của chúng tôi
+                </h1>
                 <div className={cx('box-pc')}>
                     {description.map(item => {
                         return (
                             <div
                                 className={cx(`box-item`, `delay-${item.id}`, isIntoView ? "onView" : "")}
                                 key={item.id}
-                                ref={ref}
+                                ref={refPost}
                             >
                                 <div className={cx("item-img")}>
                                     <img loading='lazy' src={item.img} alt='erro' />
@@ -52,31 +54,7 @@ function Intro() {
                         )
                     })}
                 </div>
-                <div className={cx('box-mobile')}>
-                    <Swiper
-                        pagination={{
-                            clickable: true
-                        }}
-                        modules={[Pagination, Navigation, A11y]}
-                        className={cx("mySwiper")}
-                    >
-                        {description.map(item => (
-                            <SwiperSlide key={item.id}>
-                                <div className={cx("box-item")} key={item.id}>
-                                    <div className={cx("item-img")}>
-                                        <img src={item.img} alt='erro' />
-                                    </div>
-                                    <div className={cx("item-title")}>
-                                        {item.title}
-                                    </div>
-                                    <div className={cx("item-description")}>
-                                        {item.description}
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+                <BoxMobile />
             </div>
         </div>
     );

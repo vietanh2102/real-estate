@@ -1,0 +1,33 @@
+.box-mobile {
+    padding: 0;
+}
+
+.item-img {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-title {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    color: #2C2C2C;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.item-description {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width: 768px) {
+
+    .box-mobile {
+        display: none;
+    }
+}
