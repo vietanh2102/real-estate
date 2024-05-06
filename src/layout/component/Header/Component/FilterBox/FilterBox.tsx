@@ -4,93 +4,49 @@ import { useState } from 'react'
 
 import styles from './FilterBox.module.scss'
 import classNames from 'classnames/bind'
-import FilterTitle from '../FilterItem/FilterItem'
-// import WrapperPopup from '../../../../../component/BoxMobile/BoxMobile'
-// import { filterGround, filterLocation, filterTitlePrice } from '../../../../../constant/array'
+import FilterItem from '../../../../../component/Popup/FilterItem'
+import { filterGround, filterLocation, filterTitlePrice, filterType } from '../../../../../constant/array'
 
 const cx = classNames.bind(styles)
 function FilterBox() {
-    const [filterPrice, setFilterPrice] = useState(false)
-    const [filterShowGround, setFilterShowGround] = useState(false)
-    const [filterShowLoction, setFilterShowLocation] = useState(false)
-    // const setShow = [setFilterPrice, setFilterShowGround, setFilterShowLocation]
     const [location, setLocation] = useState('')
     const [price, setPrice] = useState('')
-    const [ground, setGround] = useState('')
+    const [area, setArea] = useState('')
+    const [type, setType] = useState('')
     const handleClickReset = () => {
+        setType('')
         setLocation('')
         setPrice('')
-        setGround('')
+        setArea('')
     }
     return (
         <div className={cx("filter")}>
             <div className={cx("filter-box")}>
-                <div>
-                    <div
-                        onClick={() => {
-                            setFilterPrice(false),
-                                setFilterShowGround(false),
-                                setFilterShowLocation(!filterShowLoction)
-                        }}
-                        className={cx("filter-item")}
-                    >
-                        <FilterTitle title={location || 'Trên Toàn Quốc'} />
-                    </div>
+                <FilterItem
+                    item={filterType}
+                    typeFIlter='Loại nhà đất'
+                    value={type}
+                    setValue={setType}
+                />
+                <FilterItem
+                    item={filterLocation}
+                    typeFIlter='Khu vực'
+                    value={location}
+                    setValue={setLocation}
+                />
+                <FilterItem
+                    item={filterTitlePrice}
+                    typeFIlter='Mức giá'
+                    value={price}
+                    setValue={setPrice}
+                />
+                <FilterItem
+                    item={filterGround}
+                    typeFIlter='Diện tích'
+                    value={area}
+                    setValue={setArea}
+                />
 
-                    {/* <div className={cx("popup")}>
-                        <WrapperPopup
-                            condition={filterShowLoction}
-                            filter={filterLocation}
-                            setTitle={setLocation}
-                            setShow={setShow}
-                        />
-                    </div> */}
-                </div>
-                <div>
-                    <div
-                        onClick={() => {
-                            setFilterPrice(!filterPrice),
-                                setFilterShowGround(false),
-                                setFilterShowLocation(false)
-                        }}
-                        className={cx("filter-item")}
-                    >
-                        <FilterTitle title={price || 'Mức giá'} />
-                    </div>
-
-                    {/* <div className={cx("popup")}>
-                        <WrapperPopup
-                            condition={filterPrice}
-                            filter={filterTitlePrice}
-                            setTitle={setPrice}
-                            setShow={setShow}
-                        />
-                    </div> */}
-                </div>
-                <div>
-                    <div
-                        onClick={() => {
-                            setFilterShowGround(!filterShowGround),
-                                setFilterPrice(false),
-                                setFilterShowLocation(false)
-                        }}
-                        className={cx("filter-item")}
-                    >
-                        <FilterTitle title={ground || 'Diện tích'} />
-                    </div>
-
-                    {/* <div className={cx("popup")}>
-                        <WrapperPopup
-                            condition={filterShowGround}
-                            filter={filterGround}
-                            setTitle={setGround}
-                            setShow={setShow}
-                        />
-                    </div> */}
-                </div>
-                <div>
-                    <FilterTitle title='Lọc thêm' />
-                </div>
             </div>
             <div
                 className={cx("reset")}

@@ -39,7 +39,6 @@ function BoxMobile() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div></div>
         </div>
     );
 }

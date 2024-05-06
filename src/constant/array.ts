@@ -227,18 +227,35 @@ export const filterLocation: Filter[] = [
     },
     {
         title: "TP Hồ Chí Minh",
-        value: "TP Hồ Chí Minh"
+        value: "Hồ Chí Minh"
     },
     {
         title: "Tp Đà Nẵng",
-        value: "Tp Đà Nẵng"
+        value: "Đà Nẵng"
     },
     {
         title: "Tp Bình Dương",
-        value: "Tp Bình Dương"
+        value: "Bình Dương"
     },
     {
         title: "Tp Đà Lạt",
-        value: "Tp Đà Lạt"
+        value: "Đà Lạt"
     }
+]
+export const filterType: Filter[] = [
+    {
+        title: 'Tất cả nhà đất',
+        value: 'Tất cả nhà đất'
+    },
+    {
+        title: 'Căn hộ mặt đất',
+        value: 'Căn hộ mặt đất',
+    },
+    {
+        title: 'Căn hộ chung cư',
+        value: 'Căn hộ chung cư',
+    }
+
+
+
 ]

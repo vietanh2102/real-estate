@@ -1,8 +1,15 @@
+import { useEffect } from "react";
+import { toTopPage } from "../../hooks/scrollTop";
 import Footer from "../component/Footer/Footer";
 import Header from "../component/Header/Header";
 
-
-function DefaultLayout({ children }: any) {
+interface Props {
+    children: React.JSX.Element
+}
+function DefaultLayout({ children }: Props) {
+    useEffect(() => {
+        toTopPage()
+    })
     return (
         <div>
             <Header />
