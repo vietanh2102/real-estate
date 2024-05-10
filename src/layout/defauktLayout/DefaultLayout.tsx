@@ -9,7 +9,7 @@ interface Props {
 function DefaultLayout({ children }: Props) {
     useEffect(() => {
         toTopPage()
-    })
+    }, [])
     return (
         <div>
             <Header />

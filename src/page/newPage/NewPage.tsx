@@ -63,6 +63,7 @@ function NewPage() {
                         <div className={cx('swiper-fraction')}></div>
                     </div>
                     <div className={cx('swiper-slice2')}>
+
                         <Swiper
                             onSwiper={setThumbsSwiper}
                             spaceBetween={10}
@@ -80,6 +81,7 @@ function NewPage() {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
+
                     </div>
                 </div>
                 <div className={cx('info')}>

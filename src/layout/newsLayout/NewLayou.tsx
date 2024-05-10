@@ -6,6 +6,7 @@ import { toTopPage } from "../../hooks/scrollTop";
 
 import { useEffect } from "react";
 import classNames from "classnames/bind";
+import FilterBox from "../component/Header/Component/FilterBox/FilterBox";
 interface Props {
     children: React.JSX.Element
 }
@@ -13,13 +14,16 @@ const cx = classNames.bind(styles)
 function NewLayout({ children }: Props) {
     useEffect(() => {
         toTopPage()
-    })
+    }, [])
     return (
         <div className={cx('wrapper')}>
             <NavBar />
             <div className={cx('box-seach')}>
                 <div className={cx("input-box")}>
                     <InputSearch />
+                </div>
+                <div className={cx("filter-box")}>
+                    <FilterBox />
                 </div>
             </div>
             {children}

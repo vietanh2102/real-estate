@@ -18,6 +18,11 @@ function Header() {
                 <div className={cx("search-box")}>
                     <div className={cx("search-tab")}>
                         <span
+                            className={cx("tab", "active", "title")}
+                        >
+                            Tìm kiếm
+                        </span>
+                        <span
                             className={cx("tab", active[0] && "active")}
                             onClick={() => setActive(condition)}
                         >
@@ -35,6 +40,14 @@ function Header() {
                             <InputSearch />
                         </div>
                         <FilterBox />
+                    </div>
+                    <div className={cx('intro')}>
+                        <span className={cx('main-intro')}>
+                            Tìm kiếm ngôi nhà hoàn hảo cho bạn
+                        </span>
+                        <span className={cx('sub-intro')}>
+                            Khám phá ngôi nhà tốt nhất để thuê hoặc mua, từ căn hộ sang trọng đến nhà ở gia đình rộng rãi
+                        </span>
                     </div>
                 </div>
             </div>

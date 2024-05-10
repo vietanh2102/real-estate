@@ -14,7 +14,7 @@ function BoxMobile() {
         <div className={cx('box-mobile')}>
             <Swiper
                 style={{
-                    "--swiper-pagination-bottom": "-10px",
+                    // "--swiper-pagination-bottom": "-8px",
                     "--swiper-pagination-color": "#E03C31"
                 } as CSSProperties}
                 pagination={{

@@ -20,25 +20,33 @@
 }
 
 .swiper-slice1 {
-    width: 100%;
     overflow: hidden;
 }
 
 .swiper-item {
-    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(64px);
     width: 100% !important;
     height: calc(100vw* 210 / 360);
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    z-index: 999;
+
+    img {
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+    }
 }
 
-.swiper-img {
-    max-width: 696px;
-    // max-height: calc(696px* 472 / 840);
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 4px;
-}
+// .swiper-img {
+//     max-width: 696px;
+//     // max-height: calc(696px* 472 / 840);
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 4px;
+// }
 
 .swiper-fraction1 {
     position: absolute;
@@ -162,23 +170,23 @@
         padding: 0;
     }
 
-    .swiper-item {
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(64px);
-        width: 100%;
+    .mySwiper1 {
+        width: 696px;
         height: calc(696px* 472 / 840);
-        display: flex;
-        justify-content: center;
     }
 
-    .swiper-img {
-        max-width: 696px;
-        width: auto;
-        height: auto;
-        object-fit: cover;
-        cursor: pointer;
-        border-radius: 4px;
+    .swiper-item {
+        width: 696px;
+        height: 100%;
+
+
+        img {
+            min-height: auto;
+            height: auto;
+            object-fit: cover;
+        }
     }
+
 
     .swiper-item2 {
         width: 100%;
@@ -186,8 +194,15 @@
         display: flex;
         justify-content: center;
         align-self: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
+
 
 @media (min-width: 1024px) {
     .container {
