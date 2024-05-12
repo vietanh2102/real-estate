@@ -1,8 +1,8 @@
-.card {
+.card-wrapper {
     grid-template-columns: none;
     position: relative;
     perspective: 150rem;
-    min-height: 400px;
+    width: 100%;
     background: rgb(250, 250, 250);
     border-radius: 4px;
     border: 1px solid #F2F2F2;
@@ -11,12 +11,31 @@
     transform: translateY(80px);
     opacity: 0;
     transition: all 500ms;
+}
+
+.card {
+
+    display: flex;
+    // align-items: center;
 
     :hover {
         transform: none;
     }
 }
 
+//check isNewPage
+.card-news {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 335px;
+
+    .card-img {
+        width: 100% !important;
+    }
+}
+
+//animation when scroll to card
 .onView {
     opacity: 1;
     transform: translateY(0);
@@ -41,58 +60,109 @@
 
 
 .card-img {
-    width: 100%;
-    margin: auto;
+    display: flex;
+    align-items: first baseline;
+    min-width: 120px;
+    min-height: 90px;
+    width: 120px !important;
+    height: 90px !important;
+    overflow: hidden;
+    border-radius: 4px;
+
 
     img {
         width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
         border-radius: 4px;
+
     }
 }
 
 .card-info {
     margin: 16px;
-
-    h1 {
-        font-size: 14px;
-        line-height: 20px;
-        letter-spacing: -0.2px;
-        color: rgb(44, 44, 44);
-    }
-
 }
+
+.title {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    text-decoration: none !important;
+    color: rgb(44, 44, 44);
+    margin: 8px 0;
+}
+
+.destop {
+    display: none;
+}
+
+// check isNewPage
+.newsPage {
+    display: none;
+}
+
+.titleNew {
+    display: block;
+}
+
+
 
 .card-location {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.2px;
     color: rgb(44, 44, 44);
-    margin-top: 10px;
+    // margin-top: 10px;
+
+    span {
+        margin-left: 15px;
+    }
+}
+
+.card-erea {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    color: rgb(44, 44, 44);
+    // margin-top: 10px;
 
     span {
         margin-left: 10px;
     }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
+    .card {
+        display: block;
+        max-width: calc((100vw - 80px)/2);
+        min-height: 335px;
+    }
 
-    .card-info {
-        h1 {
-            height: 80px;
-        }
+    // .card-info {
+    // }
+    .title {
+        height: 80px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .destop {
+        display: block;
     }
 
     .card-img {
-        width: 100%;
+        min-width: 100%;
+        min-height: 178px;
+        width: 100% !important;
+        height: 100% !important;
 
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 4px;
-        }
     }
 }
 

@@ -12,9 +12,9 @@
 
 .wrapper {
     display: grid;
-
-    gap: 30px;
+    gap: 16px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
 
 
 }
@@ -74,14 +74,20 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 
 @media only screen and (min-width: 1024px) {
     .wrapper {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
 
         :hover {
-            transform: translateY(-20px);
-            transition: 400ms ease;
+            transform: translateY(-5px);
+            transition: 200ms ease-in-out;
         }
     }
 }

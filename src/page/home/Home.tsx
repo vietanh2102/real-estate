@@ -7,6 +7,7 @@ import LocationPost from '../../component/HomeComponent/LocationPost/LocationPos
 import News from '../../component/HomeComponent/News/News';
 import Post from '../../component/HomeComponent/Post/Post';
 import Brand from '../../component/HomeComponent/Brand/Brand';
+// import Count from '../../component/Count/Count';
 const cx = classNames.bind(styles)
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
             <News />
             <LocationPost />
             <Post />
+            {/* <Count /> */}
             <Intro />
             <Brand />
         </div>

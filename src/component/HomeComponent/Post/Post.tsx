@@ -16,7 +16,7 @@ function Post() {
             </div>
             <div className={cx("wrapper")}>
                 {postList?.map(item => (
-                    <PostCard key={item.id} post={item} />
+                    <PostCard key={item.id} post={item} isNewPage={false} />
                 ))}
             </div>
             <div className={cx("more")}>
