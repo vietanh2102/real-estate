@@ -40,7 +40,7 @@ function News() {
                         </div>
                     </div>
                     <div className={cx('news')}>
-                        <ListNew newTitle={newTitle} />
+                        <ListNew newtitle={newTitle} />
                         {/* {Response} */}
                     </div>
                 </div>

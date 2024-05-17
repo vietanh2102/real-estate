@@ -9,7 +9,7 @@ interface RouteType {
 }
 const publicRoutes: RouteType[] = [
     { path: "/", component: Home },
-    { path: `/news/:id`, component: NewPage, layout: NewLayout }
+    { path: `/news/:id/*`, component: NewPage, layout: NewLayout }
 ]
 const privateRoutes: RouteType[] = []
 export { publicRoutes, privateRoutes }

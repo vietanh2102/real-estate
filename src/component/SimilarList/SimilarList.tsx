@@ -1,10 +1,12 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useGetPostQuery } from "../../redux/blog.service";
-import styles from "./SimilarList.module.scss"
-import classNames from "classnames/bind";
-import { Navigation } from "swiper/modules";
-import PostCard from "../HomeComponent/Post/PostCard/PostCard";
 import { CSSProperties } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { useGetPostQuery } from "../../redux/blog.service";
+import { Link } from "react-router-dom";
+import classNames from "classnames/bind";
+import styles from "./SimilarList.module.scss"
+import PostCard from "../HomeComponent/Post/PostCard/PostCard";
+import { toTopPage } from "../../hooks/scrollTop";
 
 const cx = classNames.bind(styles)
 interface Props {
@@ -34,7 +36,9 @@ function SimilarList({ location }: Props) {
                     className={cx("mySwiper")}>
                     {listPost?.map(item => (
                         <SwiperSlide key={item.id}>
-                            <PostCard post={item} isNewPage={true} />
+                            <Link to={`/news/${item.id}`} onClick={() => toTopPage()}>
+                                <PostCard post={item} isNewPage={true} />
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>
