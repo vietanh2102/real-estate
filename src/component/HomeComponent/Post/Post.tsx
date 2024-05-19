@@ -18,14 +18,14 @@ function Post() {
             </div>
             <div className={cx("wrapper")}>
                 {isLoading ? <>
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
-                    <CardPostLoading isNewPage={false} />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
+                    <CardPostLoading />
                 </>
 
                     : postList?.map(item => (
