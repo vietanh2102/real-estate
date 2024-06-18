@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import styles from './FilterBox.module.scss'
 import classNames from 'classnames/bind'
-import FilterItem from '../../../../../component/Popup/FilterItem'
+import FilterItem from '../../../../../component/FilterItem/FilterItem'
 import { filterGround, filterLocation, filterTitlePrice, filterType } from '../../../../../constant/array'
 
 const cx = classNames.bind(styles)

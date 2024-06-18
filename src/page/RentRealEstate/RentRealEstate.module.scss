@@ -1,0 +1,33 @@
+.container {
+    max-width: 1140px;
+    margin: 24px auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    width: 100%;
+    max-width: 696px;
+    overflow: hidden;
+}
+
+.content-title {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: normal !important;
+    letter-spacing: -.2px;
+    color: #2C2C2C;
+}
+
+.sidebar {
+    display: none;
+    flex: 1;
+    max-width: 210px;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: inline-block;
+    }
+}

@@ -1,7 +1,6 @@
 .container {
     width: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 228, 228, 1) 100%);
+    background: #F2F2F2;
     padding-top: 40px;
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));

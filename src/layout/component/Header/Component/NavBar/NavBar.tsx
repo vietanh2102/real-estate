@@ -30,7 +30,8 @@ function NavBar() {
                 <div className={cx("navbar-list")}>
                     <ul className={cx('navbar-menu')}>
                         <li className={cx('navbar-item')}><Link to={'/'}>Trang chủ</Link></li>
-                        <li className={cx('navbar-item')}><Link to={''}>Loại nhà đất</Link></li>
+                        <li className={cx('navbar-item')}><Link to={"/nha-dat-ban"}>Nhà đất bán</Link></li>
+                        <li className={cx('navbar-item')}><Link to={"/nha-dat-cho-thue"}>Nhà đất cho thuê</Link></li>
                         <li className={cx('navbar-item')}><Link to={''}>Dự án</Link></li>
                         <li className={cx('navbar-item')}><Link to={''}>Tin tức</Link></li>
                         <li className={cx('navbar-item')}><Link to={''}>Liên hệ</Link></li>
@@ -69,7 +70,7 @@ function NavBar() {
                                 className={cx('navbar-item')}
                                 onClick={() => setShowMenu(false)}
                             >
-                                <Link to={'/'}>
+                                <Link to={'/loai-nha-dat'}>
                                     <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/all.svg' alt='err' />
                                     <span className={cx("text")}>Loại nhà đất</span>
                                 </Link>

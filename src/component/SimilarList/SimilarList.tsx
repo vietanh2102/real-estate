@@ -36,7 +36,7 @@ function SimilarList({ location }: Props) {
                     className={cx("mySwiper")}>
                     {listPost?.map(item => (
                         <SwiperSlide key={item.id}>
-                            <Link to={`/news/${item.id}`} onClick={() => toTopPage()}>
+                            <Link to={`/news/${item.id}`} onClick={() => toTopPage(0)}>
                                 <PostCard post={item} isNewPage={true} />
                             </Link>
                         </SwiperSlide>

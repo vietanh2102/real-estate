@@ -1,0 +1,41 @@
+.sidebar-box {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #F2F2F2;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -.2px;
+}
+
+.mySwiper {
+    padding-bottom: 40px;
+}
+
+.broker-tag {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.broker-avatar {
+    width: 48px;
+    height: 48px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.broker-phone {
+    color: #999;
+}
+
+.broker-name {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}

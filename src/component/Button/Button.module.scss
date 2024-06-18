@@ -1,0 +1,33 @@
+.button {
+    width: 100%;
+    margin: 8px 16px;
+    padding: 5px 11px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal !important;
+    letter-spacing: -.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.small {
+    padding: 5px 11px;
+    margin: 0;
+    line-height: normal;
+}
+
+.primary {
+    background-color: white;
+    color: #2C2C2C;
+    border: solid 1px #ccc;
+    cursor: pointer;
+}
+
+.blueButton {
+    background-color: #009BA1;
+    border: 1px solid #009BA1;
+    color: white;
+}

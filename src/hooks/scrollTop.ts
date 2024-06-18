@@ -1,6 +1,6 @@
-export const toTopPage = () => {
+export const toTopPage = (top: number | undefined) => {
     window.scrollTo({
-        top: 0,
+        top: top,
         behavior: `smooth`
     })
 }

@@ -20,12 +20,18 @@ export interface Description {
 }
 export interface Filter {
     title: string,
-    value: string
+    value?: number | string
 }
 export interface DetailEstateType {
     src: string,
     title: string,
-    value: string
+    value: string | undefined | number
+}
+export interface Broker {
+    id: number;
+    name: string;
+    phone: string;
+    img: string;
 }
 export const brandItem: BrandItem[] = [
     {
@@ -154,10 +160,6 @@ export const description: Description[] = [
 ]
 export const filterTitlePrice: Filter[] = [
     {
-        title: "Mức giá",
-        value: "0"
-    },
-    {
         title: "Dưới 500tr",
         value: "500000000"
     },
@@ -182,11 +184,45 @@ export const filterTitlePrice: Filter[] = [
         value: "10000000000"
     },
 ]
-export const filterGround: Filter[] = [
+export const filterPriceRent: Filter[] = [
     {
-        title: "Diện tích",
-        value: "0"
+        title: "Thỏa thuận",
+        value: "Thỏa thuận"
     },
+    {
+        title: "Dưới 1 triệu",
+        value: 1
+    },
+    {
+        title: "1 - 3 triệu",
+        value: 3
+    },
+    {
+        title: "3 - 5 triệu",
+        value: 5
+    },
+    {
+        title: "5 - 10 triệu",
+        value: 10
+    },
+    {
+        title: "10 - 40 triệu",
+        value: 40
+    },
+    {
+        title: "40 - 70 triệu",
+        value: 70
+    },
+    {
+        title: "70 - 100 triệu",
+        value: 100
+    },
+    {
+        title: "Trên 100 triệu",
+        value: 100
+    }
+]
+export const filterGround: Filter[] = [
     {
         title: "Dưới 30 m²",
         value: "30"
@@ -258,4 +294,118 @@ export const filterType: Filter[] = [
 
 
 
+]
+export const broker: Broker[] = [
+    {
+        id: 0,
+        name: "CÔNG TY TNHH BĐS MỸ KIM LAND",
+        phone: "0906656667",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2020/10/05/RUFz0fap/20201005164326-3c36.jpg"
+    },
+    {
+        id: 1,
+        name: "Công ty TNHH Đầu tư Thịnh Hưng",
+        phone: "0968652478",
+        img: "https://file1.batdongsan.com.vn/thumb200x200.2259.cong-ty-tnhh-dau-tu-thinh-hung.jpg"
+    },
+    {
+        id: 2,
+        name: "Công ty TNHH Thương Mại Kinh doanh Địa Ốc Triết Nhung",
+        phone: "0968524789",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2017/11/30/JGcIp0rf/20171130143859-71d7.jpg"
+    },
+    {
+        id: 3,
+        name: "Công ty TNHH Tư vấn Đấu giá BĐS Sài Gòn Mới",
+        phone: "0968524211",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2018/02/09/JGcIp0rf/20180209163223-9e82.jpg"
+    },
+    {
+        id: 4,
+        name: "CÔNG TY CỔ PHẦN BẤT ĐỘNG SẢN PAGELAND",
+        phone: "0968527866",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2020/10/01/RUFz0fap/20201001152924-a627.jpg"
+    },
+    {
+        id: 5,
+        name: "Công ty Cổ phần Dịch vụ Đầu tư Thiên Phúc",
+        phone: "0968528888",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2018/06/13/JGcIp0rf/20180613143624-5685.jpg"
+    },
+    {
+        id: 6,
+        name: "Công ty cổ phần dịch vụ Địa ốc Hưng Lộc Phát",
+        phone: "0968688668",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2015/12/11/eCGLjNi5/20151211100131-4d2d.jpg"
+    },
+    {
+        id: 7,
+        name: "Big Saigon Real Estate Consulting Co., Ltd",
+        phone: "0968686666",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2017/05/29/eCGLjNi5/20170529150235-38de.jpg"
+    },
+    {
+        id: 8,
+        name: "Công ty TNHH Bất động sản Phố An Cư",
+        phone: "096862222",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2015/12/08/eCGLjNi5/20151208143004-22a0.jpg"
+    },
+    {
+        id: 9,
+        name: "Công ty TNHH Sàn Giao Dịch BĐS Quang Thịnh",
+        phone: "0968689999",
+        img: "https://file1.batdongsan.com.vn/thumb200x200.2259.cong-ty-tnhh-dau-tu-thinh-hung.jpg"
+    },
+    {
+        id: 10,
+        name: "Công ty cổ phần BĐS Hoài Đức",
+        phone: "0968685555",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2020/10/01/RUFz0fap/20201001152924-a627.jpg"
+    },
+    {
+        id: 11,
+        name: "BĐS Hà Nội",
+        phone: "0968689999",
+        img: "https://file4.batdongsan.com.vn/resize/200x200/2018/05/17/JGcIp0rf/20180517111204-0c9d.jpg"
+    },
+]
+export const projectList: Filter[] = [
+    {
+        title: "Vinhomes ocean park"
+    },
+    {
+        title: "Vinhomes smart city"
+    },
+    {
+        title: "Thăng Long Victory"
+    },
+    {
+        title: "Geleximco Lê Trọng Tấn"
+    },
+    {
+        title: "Gemek Tower"
+    },
+    {
+        title: "Khu nhà ở Thiên đườn Bảo Sơn"
+    },
+    {
+        title: "Dự án Nam An Khánh"
+    }
+]
+export const utilsList: Filter[] = [
+    {
+        title: "Tư vấn phong thủy"
+    },
+    {
+        title: "Dự tính chi phí làm nhà"
+    },
+    {
+        title: "Tính lãi suất"
+    },
+    {
+        title: "Quy trình xây nhà"
+    },
+    {
+        title: "Xem tuổi làm nhà"
+    },
 ]

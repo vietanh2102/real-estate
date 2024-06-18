@@ -4,7 +4,7 @@
     width: 100%;
     padding: 10px 0;
     display: flex;
-    justify-content: space-around;
+    margin-left: 16px;
 }
 
 .icon {
@@ -20,7 +20,6 @@
 }
 
 .title {
-
     margin-top: 10px;
     margin-left: 16px;
     width: 128px;
@@ -44,8 +43,9 @@
 
 @media (min-width: 768px) {
     .item {
-        width: calc(50% - 15px);
+        width: calc(50% - 15px - 16px);
         float: left;
+        justify-content: space-around;
     }
 
     .icon {
@@ -55,7 +55,6 @@
 
     .title {
         float: left;
-
         width: 128px;
     }
 

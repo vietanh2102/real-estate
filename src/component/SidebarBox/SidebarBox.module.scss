@@ -1,0 +1,29 @@
+.sidebar-box {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #F2F2F2;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    letter-spacing: -.2px;
+}
+
+.darkBox {
+    background-color: #F2F2F2;
+}
+
+.box-conten {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.box-item {
+    margin-bottom: 12px;
+    font-weight: normal !important;
+    cursor: pointer;
+
+    &:hover {
+        color: #999;
+    }
+}

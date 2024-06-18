@@ -8,7 +8,7 @@ interface Props {
 }
 function DefaultLayout({ children }: Props) {
     useEffect(() => {
-        toTopPage()
+        toTopPage(0)
     }, [])
     return (
         <div>

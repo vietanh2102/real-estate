@@ -6,7 +6,6 @@ import styles from './PostCard.module.scss'
 import { Post } from "../../../../types/PostType";
 import { useEffect, useRef, useState } from 'react';
 import { IsIntoView } from '../../../../hooks/IsIntoView';
-import ereaIcon from "./../../../../assets/img/ereaIcon.webp"
 interface Props {
     post: Post,
     isNewPage: boolean,
@@ -45,13 +44,15 @@ const PostCard = ({ post, isNewPage, }: Props) => {
                     <img src={post.img[0]} alt="err" />
                 </div>
                 <div className={cx("card-info")}>
-                    <h1 className={cx("title", "destop", isNewPage ? "titleNew" : "")}>
+                    <div className={cx("title", "destop", isNewPage ? "titleNew" : "")}>
                         {post.title}
-                    </h1>
+                    </div>
                     <div className={cx("card-erea")}>
-                        <img src={ereaIcon} alt='err' />
-                        {/* <span>{post.area}</span> */}
-                        <span>60m</span>
+                        {post?.type === "bán" &&
+                            <span className={cx('price')}>~ {post.detail.price * post.detail.area / 1000} tỷ</span>
+                        }
+                        <span className={cx("area")}>{post?.detail.area}m²</span>
+                        <span className={cx("config-price")}> {post?.detail.price}tr/m²</span>
                     </div>
                     <div className={cx("card-location")}>
                         <FontAwesomeIcon icon={faLocationDot} />

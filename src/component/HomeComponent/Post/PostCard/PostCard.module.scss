@@ -73,6 +73,7 @@
     img {
         width: 100%;
         height: 100%;
+        max-height: 200px;
         object-fit: cover;
         border-radius: 4px;
 
@@ -103,8 +104,13 @@
 
 .titleNew {
     display: block;
+
 }
 
+.price,
+.area {
+    color: red;
+}
 
 
 .card-location {
@@ -145,9 +151,6 @@
 
     // .card-info {
     // }
-    .title {
-        height: 80px;
-    }
 
     .mobile {
         display: none;
@@ -155,11 +158,18 @@
 
     .destop {
         display: block;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-wrap: break-word;
     }
 
     .card-img {
         min-width: 100%;
-        min-height: 178px;
+        min-height: 200px;
         width: 100% !important;
         height: 100% !important;
 
