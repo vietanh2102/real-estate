@@ -8,6 +8,7 @@
     line-height: 30px;
     text-overflow: ellipsis;
     color: rgba(0, 0, 0, 0.8);
+
 }
 
 .filter-box {
@@ -16,13 +17,123 @@
     gap: 8px;
 }
 
+.box-newpage {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 997;
+    display: none;
+}
+
+.filter-item {
+    position: relative;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    float: left;
+    position: relative;
+    margin-top: 8px;
+    margin-right: 8px;
+    width: calc(50% - 4px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 0 26px 0 15px;
+}
+
+.item-newpage {
+    color: black;
+    border: 1px solid #6666;
+}
+
+.filter-title {
+    font-size: 14px;
+    font-weight: normal !important;
+    height: 30px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.icon {
+    position: absolute;
+    right: 7px;
+    top: 3px;
+    line-height: 24px;
+    width: 24px;
+    text-align: center;
+    // transform: rotate(180deg);
+}
+
+.filter-list {
+    position: relative;
+    min-width: 300px;
+    background-color: white;
+
+    height: auto;
+    padding: 16px 0;
+    color: black;
+    margin-top: 8px;
+    border-radius: 4px;
+    display: none;
+    z-index: 998 !important;
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 0 16px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #f2f2f2;
+            color: #74150F;
+        }
+    }
+}
+
+.active {
+    display: inline-block;
+}
+
 .reset {
     position: absolute;
     bottom: 15px;
     right: 16px;
+    color: #fff;
 
     span {
         margin-left: 8px;
+    }
+}
+
+.reset-newpage {
+    display: none;
+}
+
+@media(min-width:768px) {
+    .filter {
+        display: block;
+    }
+
+    .filter-newpage {
+        padding: 0 16px;
+    }
+
+    .filter-item {
+        width: 100%;
+        padding-top: 7px;
+    }
+
+    .icon {
+        top: 7px;
     }
 }
 
@@ -30,7 +141,7 @@
     .filter {
         display: block;
         display: flex;
-        padding-bottom: 16px;
+        padding-bottom: 0;
     }
 
     .filter-box {
@@ -40,10 +151,14 @@
         gap: 8px;
     }
 
+    .filter-item {
+        margin-top: 0;
+    }
+
     .reset {
         position: relative;
-        bottom: 0;
-        right: 0;
+        bottom: -4px;
+        right: -4px;
         margin: auto 8px;
         font-size: 18px;
         cursor: pointer;

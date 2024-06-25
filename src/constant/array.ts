@@ -18,9 +18,21 @@ export interface Description {
     title: string,
     description: string
 }
-export interface Filter {
+export interface FilterPrice {
     title: string,
-    value?: number | string
+    value: [number, number]
+}
+export interface filterLocation {
+    title: string,
+    value: string
+}
+export interface FilterArea {
+    title: string,
+    value: number
+}
+export interface FilterType {
+    title: string,
+    value: string
 }
 export interface DetailEstateType {
     src: string,
@@ -32,6 +44,10 @@ export interface Broker {
     name: string;
     phone: string;
     img: string;
+}
+export interface Filter {
+    title: any,
+    value: any
 }
 export const brandItem: BrandItem[] = [
     {
@@ -158,101 +174,97 @@ export const description: Description[] = [
         description: 'Ngoài cập nhật những biến động thị trường, chúng tôi còn cung cấp kiến ​​thức, kinh nghiệm về mua bán, cho thuê, đầu tư, vay mua nhà, phong thủy, thiết kế nhà, mọi thông tin cần thiết để dẫn lối người tìm nhà tìm thấy căn nhà mơ ước.'
     }
 ]
-export const filterTitlePrice: Filter[] = [
+export const filterTitlePrice: FilterPrice[] = [
     {
-        title: "Dưới 500tr",
-        value: "500000000"
+        title: "Tất cả các mức giá",
+        value: [0, 0]
     },
     {
-        title: "Dưới 1tỷ",
-        value: "1000000000"
+        title: "Dưới 500tr",
+        value: [0, 0.5]
+    },
+    {
+        title: "Dưới 1 tỷ",
+        value: [0, 1]
     },
     {
         title: "1-2 tỷ",
-        value: "1000000000"
+        value: [1, 2]
     },
     {
         title: "3-5 tỷ",
-        value: "3000000000"
+        value: [3, 5]
     },
     {
         title: "5-10 tỷ",
-        value: "5000000000"
+        value: [5, 10]
     },
     {
         title: "Trên 10 tỷ",
-        value: "10000000000"
+        value: [10, 9999999999999]
     },
 ]
-export const filterPriceRent: Filter[] = [
+export const filterPriceRent: FilterPrice[] = [
     {
-        title: "Thỏa thuận",
-        value: "Thỏa thuận"
-    },
-    {
-        title: "Dưới 1 triệu",
-        value: 1
+        title: "Tất cả các mức giá",
+        value: [0, 0]
     },
     {
         title: "1 - 3 triệu",
-        value: 3
+        value: [1, 3]
     },
     {
         title: "3 - 5 triệu",
-        value: 5
+        value: [3, 5]
     },
     {
         title: "5 - 10 triệu",
-        value: 10
+        value: [5, 10]
     },
     {
         title: "10 - 40 triệu",
-        value: 40
+        value: [10, 40]
     },
     {
         title: "40 - 70 triệu",
-        value: 70
+        value: [40, 70]
     },
     {
         title: "70 - 100 triệu",
-        value: 100
+        value: [70, 100]
     },
     {
         title: "Trên 100 triệu",
-        value: 100
+        value: [100, 10000000]
     }
 ]
-export const filterGround: Filter[] = [
+export const filterGround: FilterArea[] = [
     {
-        title: "Dưới 30 m²",
-        value: "30"
+        title: "Tất cả diện tích",
+        value: 0
     },
     {
-        title: "Dưới 50 m²",
-        value: "50"
+        title: "Trên 50m²",
+        value: 50
     },
     {
-        title: "50-80 m²",
-        value: "50"
+        title: "Trên 80m²",
+        value: 80
     },
     {
-        title: "80-100 m²",
-        value: "80"
+        title: "Trên 100m²",
+        value: 100
     },
     {
-        title: "100-150 m²",
-        value: "100"
-    },
-    {
-        title: "150-200 m²",
-        value: "150"
+        title: "Trên 150m²",
+        value: 150
     },
     {
         title: "Trên 200 m²",
-        value: "200"
+        value: 200
     }
 ]
-export const filterLocation: Filter[] = [
+export const filterLocation: filterLocation[] = [
     {
         title: "Trên Toàn Quốc",
         value: ""
@@ -278,7 +290,7 @@ export const filterLocation: Filter[] = [
         value: "Đà Lạt"
     }
 ]
-export const filterType: Filter[] = [
+export const filterType: FilterType[] = [
     {
         title: 'Tất cả nhà đất',
         value: 'Tất cả nhà đất'
@@ -369,43 +381,55 @@ export const broker: Broker[] = [
         img: "https://file4.batdongsan.com.vn/resize/200x200/2018/05/17/JGcIp0rf/20180517111204-0c9d.jpg"
     },
 ]
-export const projectList: Filter[] = [
+export const projectList: FilterType[] = [
     {
-        title: "Vinhomes ocean park"
+        title: "Vinhomes ocean park",
+        value: ""
     },
     {
-        title: "Vinhomes smart city"
+        title: "Vinhomes smart city",
+        value: ""
     },
     {
-        title: "Thăng Long Victory"
+        title: "Thăng Long Victory",
+        value: ""
     },
     {
-        title: "Geleximco Lê Trọng Tấn"
+        title: "Geleximco Lê Trọng Tấn",
+        value: ""
     },
     {
-        title: "Gemek Tower"
+        title: "Gemek Tower",
+        value: ""
     },
     {
-        title: "Khu nhà ở Thiên đườn Bảo Sơn"
+        title: "Khu nhà ở Thiên đườn Bảo Sơn",
+        value: ""
     },
     {
-        title: "Dự án Nam An Khánh"
+        title: "Dự án Nam An Khánh",
+        value: ""
     }
 ]
-export const utilsList: Filter[] = [
+export const utilsList: FilterType[] = [
     {
-        title: "Tư vấn phong thủy"
+        title: "Tư vấn phong thủy",
+        value: ""
     },
     {
-        title: "Dự tính chi phí làm nhà"
+        title: "Dự tính chi phí làm nhà",
+        value: ""
     },
     {
-        title: "Tính lãi suất"
+        title: "Tính lãi suất",
+        value: ""
     },
     {
-        title: "Quy trình xây nhà"
+        title: "Quy trình xây nhà",
+        value: ""
     },
     {
-        title: "Xem tuổi làm nhà"
+        title: "Xem tuổi làm nhà",
+        value: ""
     },
 ]

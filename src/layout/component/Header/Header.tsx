@@ -18,11 +18,6 @@ function Header() {
                 <div className={cx("search-box")}>
                     <div className={cx("search-tab")}>
                         <span
-                            className={cx("tab", "active", "title")}
-                        >
-                            Tìm kiếm
-                        </span>
-                        <span
                             className={cx("tab", active[0] && "active")}
                             onClick={() => setActive(condition)}
                         >

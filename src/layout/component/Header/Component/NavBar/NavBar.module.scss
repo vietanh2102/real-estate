@@ -11,8 +11,9 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
 }
 
 .navbar-menu {
@@ -86,6 +87,8 @@
 
 .input-box {
     margin: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .show {
@@ -100,7 +103,15 @@
     transition-duration: 300ms;
 }
 
-@media(min-width:768px) {
+@media(min-width:785px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        height: 40px !important;
+    }
+
     .backgroud {
         width: 100%;
         height: 100vh;
@@ -112,8 +123,8 @@
 
     .navbar-menu {
         display: flex;
-        padding: 0 1rem;
         list-style: none;
+        padding: 0;
 
         a {
             color: black;
@@ -167,7 +178,21 @@
 }
 
 @media(min-width:1024px) {
+
     .navbar-list {
         display: inline-block;
     }
+
+    .navbar {
+        padding: 0.5rem 2rem;
+    }
+
+    .navbar-menu {
+        font-size: 14px !important;
+    }
+
+    .logo {
+        height: 60px !important;
+    }
+
 }

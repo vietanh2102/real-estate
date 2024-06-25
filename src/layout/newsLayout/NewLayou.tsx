@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import classNames from "classnames/bind";
 // import FilterBox from "../component/Header/Component/FilterBox/FilterBox";
 import { useParams } from "react-router-dom";
+import InputSearch from "../component/Header/Component/InputSearch/InputSearch";
+import FilterBox from "../component/Header/Component/FilterBox/FilterBox";
 interface Props {
     children: React.JSX.Element
 }
@@ -21,12 +23,14 @@ function NewLayout({ children }: Props) {
         <div className={cx('wrapper')}>
             <NavBar />
             <div className={cx('box-seach')}>
-                {/* <div className={cx("input-box")}>
-                    <InputSearch />
-                </div> */}
-                {/* <div className={cx("filter-box")}>
-                    <FilterBox />
-                </div> */}
+                <div className={cx("filter-box")}>
+                    <FilterBox isNewPage={true} />
+                </div>
+                <div className={cx("input-box")}>
+                    <InputSearch isNewPage={true} />
+                </div>
+
+
             </div>
             <div className={cx("conten")}>{children}</div>
             <Footer />

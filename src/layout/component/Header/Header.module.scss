@@ -33,6 +33,7 @@
 .search-tab {
     display: none;
     animation: roll-up 1s;
+    height: auto;
 }
 
 .tab {
@@ -43,8 +44,9 @@
     box-sizing: border-box;
     padding: 6px 12px;
     margin-right: 8px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
+    height: 100%;
 }
 
 .title {
@@ -52,14 +54,14 @@
 }
 
 .active {
-    background-color: rgb(244, 186, 186);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
 }
 
 .search-conten {
     // opacity: 0;
     background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 228, 228, 1) 100%);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 0 4px 4px 4px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0 auto;
@@ -107,6 +109,7 @@
 
     .search-conten {
         opacity: 1;
+        padding-bottom: 16px;
     }
 
     .main-intro {

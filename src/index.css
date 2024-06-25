@@ -11,11 +11,16 @@ html body {
     overflow-x: hidden;
 }
 
+.noscroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
 body {
-    /* font-family: 'Nunito Sans', sans-serif; */
-    font-family: "Lexend Medium", Roboto, Arial !important;
+    font-family: Lexend Medium, Roboto, Arial !important;
     font-size: 1.4em;
-    line-height: 1.5;
+    line-height: 1.6;
     /* text-rendering: optimizeSpeed; */
 }
 

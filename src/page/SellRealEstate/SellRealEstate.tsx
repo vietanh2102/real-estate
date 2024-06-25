@@ -6,29 +6,59 @@ import classNames from 'classnames/bind';
 import { Post } from '../../types/PostType';
 import ProjectCard from '../../component/ProjectCard/ProjectCard';
 import { useGetPostQuery } from '../../redux/blog.service';
-import { Link } from 'react-router-dom';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { useEffect } from 'react';
+import { resetFilter, setTypeFilter } from '../../redux/blog.slice';
 
 const cx = classNames.bind(styles)
 function SellRealEstate() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(resetFilter())
+        dispatch(setTypeFilter("bán"))
+    }, [])
     const { data } = useGetPostQuery()
+    const optionFilter = useSelector((state: RootState) => state.blog.optionFilter)
     const news: Post[] | undefined = data?.filter(item => item.type === "bán")
     return (
         <div className={cx("container")}>
             <div className={cx("content")}>
                 <span>Bán/</span>
-                <span style={{ color: "black" }}>Tất cả BĐS trên toàn quốc</span>
-                <h2 className={cx("content-title")}>Mua bán nhà đất trên toàn quốc</h2>
+                <span style={{ color: "black" }}>
+                    Tất cả BĐS {optionFilter.location ? `tại ${optionFilter.location}` : "Trên toàn quốc "}
+                </span>
+                <h2 className={cx("content-title")}>
+                    Mua bán nhà đất {optionFilter.location ? `tại ${optionFilter.location}` : "Trên toàn quốc"}
+                    {(optionFilter.price[1] !== 0 && optionFilter.price[1] < 2) && `, giá dưới ${optionFilter.price[1]} tỉ `}
+
+                    {(optionFilter.price[1] > 2 && optionFilter.price[1] < 100) && `, giá từ ${optionFilter.price[0]} tỉ đến ${optionFilter.price[1]} tỉ`}
+
+                    {(optionFilter.price[1] !== 0 && optionFilter.price[1] > 100) && `, giá trên ${optionFilter.price[0]} tỉ`}
+
+                    {optionFilter.area !== 0 && `, diện tích trên ${optionFilter.area}/m²`}
+                </h2>
                 {news?.map(item => (
-                    <Link to={`/news/${item.id}`}>
-                        <ProjectCard news={item} key={item.id} />
-                    </Link>
+                    <ProjectCard news={item} key={item.id} />
                 ))}
             </div>
             <div className={cx("sidebar")}>
-                <SidebarBox title='Lọc theo khoảng giá' list={filterTitlePrice} />
-                <SidebarBox title='Lọc theo diện tích' list={filterGround} />
-                <SidebarBox title='Lọc theo địa điểm' list={filterLocation} darkBox={true} />
+                <SidebarBox
+                    title='Lọc theo địa điểm'
+                    list={filterLocation}
+                    darkBox={true}
+                    typeFilter='location'
+                />
+                <SidebarBox
+                    title='Lọc theo khoảng giá'
+                    list={filterTitlePrice}
+                    typeFilter='price'
+                />
+                <SidebarBox
+                    title='Lọc theo diện tích'
+                    list={filterGround}
+                    typeFilter='area'
+                />
                 <BrokerSlice />
             </div>
         </div>

@@ -1,25 +1,29 @@
+.input-box {
+    width: 100%;
+}
+
 .search-input {
     position: relative;
     display: flex;
     border-radius: 4px;
     letter-spacing: -.2px;
+    font-size: 14px;
+    line-height: 20px;
 
     input {
         flex: 1;
         outline: unset;
         border: none;
-        padding: 8px 12px;
-        font-size: 14px;
-        line-height: 20px;
+        padding: 12px 14px;
         border-radius: 8px;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: #f2f2f2;
     }
 
     button {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
+        top: 3px;
+        right: 3px;
+        height: calc(100% - 6px);
         color: #fff;
         background: #E03C31;
         border: solid 1px #E03C31;
@@ -34,7 +38,6 @@
         span {
             display: none;
             margin-left: 8px;
-            font-family: "Lexend Medium", Roboto, Arial !important;
             font-size: 14px;
             line-height: 20px;
             font-weight: normal !important;
@@ -42,15 +45,19 @@
     }
 }
 
+.text-newpage {
+    display: none !important;
+}
+
 @media(min-width:768px) {
     .search-input {
         input {
-            padding: 18px 12px;
+            padding: 14px 12px;
         }
 
         button {
             position: absolute;
-            top: 10px;
+            top: 6px;
             right: 8px;
             bottom: 8px;
             height: 34px;
@@ -73,18 +80,16 @@
             flex: 1;
             outline: unset;
             border: none;
-            padding: 18px 12px;
-            font-size: 14px;
-            line-height: 20px;
+            padding: 14px 12px;
             border-radius: 8px;
             background-color: #F2F2F2;
         }
 
         button {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            height: 36px;
+            top: 8px;
+            right: 8px;
+            height: calc(100% - 16px);
             color: #fff;
             background: #E03C31;
             border: solid 1px #E03C31;
@@ -98,10 +103,6 @@
 
             span {
                 margin-left: 8px;
-                font-family: "Lexend Medium", Roboto, Arial !important;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: normal !important;
                 display: inline-block;
             }
         }

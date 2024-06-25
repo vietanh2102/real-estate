@@ -4,9 +4,11 @@ import style from "./InputSearch.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-
+interface Props {
+    isNewPage?: boolean
+}
 const cx = classNames.bind(style)
-function InputSearch() {
+function InputSearch({ isNewPage }: Props) {
     const [introIndex, setIntroIndex] = useState(0)
     const intro = [
         'Khu đô thị Nam An Khánh',
@@ -35,7 +37,7 @@ function InputSearch() {
                 />
                 <button>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <span>Tìm kiếm</span>
+                    <span className={cx(isNewPage && "text-newpage")}>Tìm kiếm</span>
                 </button>
             </div>
         </div >

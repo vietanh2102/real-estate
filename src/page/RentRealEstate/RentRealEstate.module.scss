@@ -10,15 +10,23 @@
     width: 100%;
     max-width: 696px;
     overflow: hidden;
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal !important;
+    color: #999;
+
 }
 
 .content-title {
+    margin: 16px 0;
     font-size: 18px;
     line-height: 28px;
     font-weight: normal !important;
     letter-spacing: -.2px;
     color: #2C2C2C;
 }
+
 
 .sidebar {
     display: none;
