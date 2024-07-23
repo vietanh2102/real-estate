@@ -9,18 +9,16 @@ function CardRealEstateLoading() {
         <div className={cx("main-conten")}>
             <div className={cx("conten-img")}>
                 <div className={cx("big-img")}>
-                    <Skeleton className={cx("img")}>
-                    </Skeleton>
+                    <Skeleton className={cx("img")} />
                 </div>
                 <div className={cx("small-img")}>
-                    <div className={cx("img-parent1")}><Skeleton className={cx("img")}></Skeleton></div>
-                    <div className={cx("img-parent2")}><Skeleton className={cx("img")}></Skeleton></div>
-                    <div className={cx("img-parent3")}><Skeleton className={cx("img")}></Skeleton></div>
+                    <div className={cx("img-parent1")}><Skeleton className={cx("img")} /></div>
+                    <div className={cx("img-parent2")}><Skeleton className={cx("img")} /></div>
+                    <div className={cx("img-parent3")}><Skeleton className={cx("img")} /></div>
                 </div>
             </div>
-            <Skeleton className={cx("conten-title")}></Skeleton>
-            <Skeleton className={cx("info-user")}>
-            </Skeleton>
+            <Skeleton className={cx("conten-title")} />
+            <Skeleton className={cx("info-user")} />
         </div>
     );
 }
