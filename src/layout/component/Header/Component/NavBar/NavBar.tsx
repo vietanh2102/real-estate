@@ -32,9 +32,9 @@ function NavBar() {
                         <li className={cx('navbar-item')}><Link to={'/'}>Trang chủ</Link></li>
                         <li className={cx('navbar-item')}><Link to={"/nha-dat-ban"}>Nhà đất bán</Link></li>
                         <li className={cx('navbar-item')}><Link to={"/nha-dat-cho-thue"}>Nhà đất cho thuê</Link></li>
-                        <li className={cx('navbar-item')}><Link to={''}>Dự án</Link></li>
-                        <li className={cx('navbar-item')}><Link to={''}>Tin tức</Link></li>
-                        <li className={cx('navbar-item')}><Link to={''}>Liên hệ</Link></li>
+                        <li className={cx('navbar-item')}><Link to={'/du-an'}>Dự án</Link></li>
+                        <li className={cx('navbar-item')}><Link to={'/tin-tuc'}>Tin tức</Link></li>
+                        <li className={cx('navbar-item')}><Link to={'/lien-he'}>Liên hệ</Link></li>
                     </ul>
                 </div>
                 {/* {responsive} */}
@@ -70,16 +70,25 @@ function NavBar() {
                                 className={cx('navbar-item')}
                                 onClick={() => setShowMenu(false)}
                             >
-                                <Link to={'/loai-nha-dat'}>
+                                <Link to={'/nha-dat-ban'}>
                                     <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/all.svg' alt='err' />
-                                    <span className={cx("text")}>Loại nhà đất</span>
+                                    <span className={cx("text")}>Nhà đất bán</span>
                                 </Link>
                             </li>
                             <li
                                 className={cx('navbar-item')}
                                 onClick={() => setShowMenu(false)}
                             >
-                                <Link to={'/'}>
+                                <Link to={'/nha-dat-cho-thue'}>
+                                    <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/all.svg' alt='err' />
+                                    <span className={cx("text")}>Nhà đất cho thuê</span>
+                                </Link>
+                            </li>
+                            <li
+                                className={cx('navbar-item')}
+                                onClick={() => setShowMenu(false)}
+                            >
+                                <Link to={'/du-an'}>
                                     <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/apartment.svg' alt='err' />
                                     <span className={cx("text")}>Dự án</span>
                                 </Link>
@@ -88,7 +97,7 @@ function NavBar() {
                                 className={cx('navbar-item')}
                                 onClick={() => setShowMenu(false)}
                             >
-                                <Link to={'/'}>
+                                <Link to={'/tin-tuc'}>
                                     <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/news.svg' alt='err' />
                                     <span className={cx("text")}>Tin tức</span>
                                 </Link>
@@ -97,7 +106,7 @@ function NavBar() {
                                 className={cx('navbar-item')}
                                 onClick={() => setShowMenu(false)}
                             >
-                                <Link to={'/'}>
+                                <Link to={'/lien-he'}>
                                     <img src='https://staticfile.batdongsan.com.vn/images/mobile/icons/24x24/outlined/notebook.svg' alt='err' />
                                     <span className={cx("text")}>Liên hệ</span>
                                 </Link>

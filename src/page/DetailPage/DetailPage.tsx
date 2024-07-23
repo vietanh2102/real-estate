@@ -6,7 +6,7 @@ import { A11y, FreeMode, Navigation, Pagination, Thumbs } from "swiper/modules"
 
 
 import { Post } from "../../types/PostType"
-import styles from './NewPage.module.scss'
+import styles from './DetailPage.module.scss'
 import homeIcon from './../../assets/svg/homeIcon.svg'
 import floorIcon from './../../assets/svg/floorIcon.svg'
 import roomIcon from './../../assets/svg/roomIcon.svg'
@@ -16,16 +16,16 @@ import toiletIcon from './../../assets/img/toiletIcon.webp'
 import user from './../../assets/img/user.png'
 import DetailEstate from "../../component/NewsComonenr/detail/DetailEstate"
 import SimilarList from "../../component/SimilarList/SimilarList"
-import NewPageLoading from "../../layout/loading/NewPageLoading/NewPageLoading"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFlag, faXmark } from "@fortawesome/free-solid-svg-icons"
 import Button from "../../component/Button/Button"
 import BrokerSlice from "../../component/BrokerSlice/BrokerSlice"
 import SidebarBox from "../../component/SidebarBox/SidebarBox"
 import { projectList, utilsList } from "../../constant/array"
+import DetailPageLoading from "../../layout/loading/DetailPageLoading/DetailPageLoading"
 // import { toTopPage } from "../../hooks/scrollTop"
 const cx = classNames.bind(styles)
-function NewPage() {
+function DetaiPage() {
     const { id } = useParams()
     const [news, setNews] = useState<Post>()
     const [loading, setLoading] = useState(false)
@@ -75,7 +75,7 @@ function NewPage() {
         getNew()
     }, [id])
     return (
-        loading ? <NewPageLoading /> :
+        loading ? <DetailPageLoading /> :
             <div className={cx('container')}>
                 <div className={cx("info-wrapper")}>
                     <div className={cx('slice')}>
@@ -273,4 +273,4 @@ function NewPage() {
     );
 }
 
-export default NewPage;
+export default DetaiPage;

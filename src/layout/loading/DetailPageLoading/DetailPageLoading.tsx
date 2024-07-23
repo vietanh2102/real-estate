@@ -2,10 +2,10 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 import classNames from "classnames/bind";
-import styles from "./NewLoading.module.scss"
+import styles from "./DetailPageLoading.module.scss"
 
 const cx = classNames.bind(styles)
-function NewPageLoading() {
+function DetailPageLoading() {
     return (
         <div className={cx('container')}>
             <div className={cx("info-wrapper")}>
@@ -26,4 +26,4 @@ function NewPageLoading() {
     );
 }
 
-export default NewPageLoading;
+export default DetailPageLoading;

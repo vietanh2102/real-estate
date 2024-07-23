@@ -11,6 +11,7 @@ import classNames from 'classnames/bind';
 import { RootState } from '../../redux/store';
 import { useEffect } from 'react';
 import { resetFilter, setTypeFilter } from '../../redux/blog.slice';
+import CardRealEstateLoading from '../../layout/loading/CardRealEstateLoading/CardRealEstateLoading';
 
 const cx = classNames.bind(styles)
 function RentRealEstate() {
@@ -19,7 +20,7 @@ function RentRealEstate() {
         dispatch(resetFilter())
         dispatch(setTypeFilter("thuê"))
     }, [])
-    const { data } = useGetPostQuery()
+    const { data, isLoading } = useGetPostQuery()
     const optionFilter = useSelector((state: RootState) => state.blog.optionFilter)
     const news: Post[] | undefined = data?.filter(item => item.type === "thuê")
     return (
@@ -35,9 +36,17 @@ function RentRealEstate() {
                     {(optionFilter.price[1] !== 0 && optionFilter.price[1] > 100) && `, giá trên ${optionFilter.price[0]}tr`}
                     {optionFilter.area !== 0 && `, diện tích trên ${optionFilter.area}/m²`}
                 </h2>
-                {news?.map(item => (
-                    <ProjectCard news={item} key={item.id} />
-                ))}
+                {isLoading ?
+                    <>
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                    </> :
+                    news?.map(item => (
+                        <ProjectCard news={item} key={item.id} />
+                    ))}
             </div>
             <div className={cx("sidebar")}>
                 <SidebarBox

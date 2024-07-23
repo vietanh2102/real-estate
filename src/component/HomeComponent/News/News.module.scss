@@ -17,7 +17,7 @@
 
 .homenews-container {
     width: calc(100% + 32px);
-    margin: 0px -16px 16px;
+    margin: 0 0 16px;
     overflow: hidden;
 
 }
@@ -150,6 +150,10 @@
 }
 
 @media only screen and (min-width: 1180px) {
+    .wrapper {
+        padding: 0;
+    }
+
     .container {
         width: 1140px;
     }
@@ -161,7 +165,7 @@
 
     .banner {
         display: block;
-        margin: auto;
+        margin: 0 auto;
         width: 260px;
     }
 

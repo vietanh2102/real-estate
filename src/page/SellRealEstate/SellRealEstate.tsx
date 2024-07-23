@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { useEffect } from 'react';
 import { resetFilter, setTypeFilter } from '../../redux/blog.slice';
+import CardRealEstateLoading from '../../layout/loading/CardRealEstateLoading/CardRealEstateLoading';
 
 const cx = classNames.bind(styles)
 function SellRealEstate() {
@@ -18,7 +19,7 @@ function SellRealEstate() {
         dispatch(resetFilter())
         dispatch(setTypeFilter("bán"))
     }, [])
-    const { data } = useGetPostQuery()
+    const { data, isLoading } = useGetPostQuery()
     const optionFilter = useSelector((state: RootState) => state.blog.optionFilter)
     const news: Post[] | undefined = data?.filter(item => item.type === "bán")
     return (
@@ -38,9 +39,17 @@ function SellRealEstate() {
 
                     {optionFilter.area !== 0 && `, diện tích trên ${optionFilter.area}/m²`}
                 </h2>
-                {news?.map(item => (
-                    <ProjectCard news={item} key={item.id} />
-                ))}
+                {isLoading ?
+                    <>
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                        <CardRealEstateLoading />
+                    </> :
+                    news?.map(item => (
+                        <ProjectCard news={item} key={item.id} />
+                    ))}
             </div>
             <div className={cx("sidebar")}>
                 <SidebarBox

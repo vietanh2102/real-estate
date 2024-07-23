@@ -49,6 +49,11 @@ export interface Filter {
     title: any,
     value: any
 }
+export interface HotLocation {
+    id: number,
+    img: string,
+    title: string
+}
 export const brandItem: BrandItem[] = [
     {
         id: 0,
@@ -432,4 +437,46 @@ export const utilsList: FilterType[] = [
         title: "Xem tuổi làm nhà",
         value: ""
     },
+]
+export const hotLocation: HotLocation[] = [
+    {
+        id: 0,
+        title: "Hà Nội",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/hanoi.6a457985.png"
+    },
+    {
+        id: 1,
+        title: "HCM",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/hcmc.fcaa9c3c.png"
+    },
+    {
+        id: 2,
+        title: "Quảng Ninh",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/quangNinh.3bd99372.png"
+    },
+    {
+        id: 3,
+        title: "Khánh Hòa",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/khanhHoa.294e8d36.png"
+    },
+    {
+        id: 4,
+        title: "Đà Nẵng",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/daNang.2c9d1a7f.png"
+    },
+    {
+        id: 5,
+        title: "Hải Phòng",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/haiPhong.652be04a.png"
+    },
+    {
+        id: 6,
+        title: "Bình Dương",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/binhDuong.54a38560.png"
+    },
+    {
+        id: 7,
+        title: "Bà Rịa Vũng Tàu",
+        img: "https://cdn-assets-angel.batdongsan.com.vn/_next/static/media/baRiaVungTau.371959d8.png"
+    }
 ]
