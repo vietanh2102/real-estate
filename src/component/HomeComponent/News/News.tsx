@@ -7,7 +7,6 @@ import baner2 from './../../../assets/img/baner2.gif'
 import { useState } from 'react';
 import ListNew from './Component/ListNew/ListNew';
 import { titleNews } from '../../../constant/array';
-import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles)
 function News() {
