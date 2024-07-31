@@ -1,0 +1,132 @@
+.wrapper {
+    padding: 10px 12px;
+}
+
+.title {
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.intro {
+    height: 46px;
+    margin-bottom: 24px;
+}
+
+.conten-main {
+    .h3 {
+        height: 32px;
+        margin-bottom: 12px;
+    }
+
+    .p {
+        height: 200px;
+        margin-bottom: 24px;
+    }
+}
+
+
+.intro {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.sidebar {
+    display: none;
+    padding-left: 20px;
+}
+
+.hot-location {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
+}
+
+.hot-news {
+    width: 100%;
+    height: 480px;
+    margin-bottom: 16px;
+}
+
+.broker {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 668px) {
+    .wrapper {
+        max-width: 714px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .conten {
+        display: flex;
+    }
+
+    .conten-main {
+        width: 66.67%;
+    }
+
+    .sidebar {
+        display: inline-block;
+        width: 33.33%;
+    }
+
+    .hot-news {
+        padding: 16px;
+
+        h2 {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 500;
+            color: black;
+            margin: 0;
+            border-bottom: 1px solid #eff1f5;
+            padding-bottom: 15px;
+        }
+    }
+
+    .new-item {
+        display: flex;
+        border-bottom: 1px solid #eff1f5;
+        padding: 20px 0 15px;
+    }
+
+    .item-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 12px;
+        width: 24px;
+        height: 24px;
+        background: #ffeceb;
+        border-radius: 100px;
+        margin: 0 10px 0 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #961b12;
+
+    }
+
+    .item-title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+}

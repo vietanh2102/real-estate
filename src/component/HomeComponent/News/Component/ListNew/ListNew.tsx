@@ -8,7 +8,8 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import styles from './ListNews.module.scss'
 import { useGetNewsQuery } from '../../../../../redux/blog.service';
-import NewLoading from '../../../../../layout/loading/NewLoading/NewLoading';
+import NewLoading from '../../../../../layout/loading/NewCardLoading/NewCardLoading';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles)
 interface Props {
@@ -35,10 +36,12 @@ function ListNew({ newtitle }: Props) {
                             {listNews?.map(item => {
                                 return (
                                     <SwiperSlide key={item.id}>
-                                        <div>
-                                            <img loading='lazy' src={item.img} alt='err' />
-                                            <span>{item.name}</span>
-                                        </div>
+                                        <Link to={`/new/${item.id}`}>
+                                            <div>
+                                                <img loading='lazy' src={item.img} alt='err' />
+                                                <span>{item.name}</span>
+                                            </div>
+                                        </Link>
                                     </SwiperSlide>
                                 )
                             })}
@@ -47,7 +50,9 @@ function ListNew({ newtitle }: Props) {
                     <div className={cx("list-news")}>
                         <ul>
                             {listNews?.map(item => (
-                                <li key={item.id}>{item.name}</li>
+                                <Link to={`/new/${item.id}`} key={item.id} >
+                                    <li >{item.name}</li>
+                                </Link>
                             ))}
                         </ul>
                     </div>

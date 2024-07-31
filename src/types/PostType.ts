@@ -4,8 +4,9 @@ export interface New {
     name: string,
     img: any,
     intro: string,
-    conten: [
-    ]
+    conten: {
+        main: string
+    }
 }
 export interface Post {
     id: number,

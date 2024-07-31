@@ -30,6 +30,13 @@
         font-size: 16px;
         font-weight: bold;
         margin-left: 16px;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-wrap: break-word;
     }
 }
 

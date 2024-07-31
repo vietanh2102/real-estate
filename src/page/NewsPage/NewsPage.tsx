@@ -2,15 +2,24 @@ import classNames from "classnames/bind";
 import styles from "./NewsPage.module.scss"
 import News from "../../component/HomeComponent/News/News";
 import BrokerSlice from "../../component/BrokerSlice/BrokerSlice";
-import Button from "../../component/Button/Button";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import { hotLocation } from "../../constant/array";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { useGetNewsQuery } from "../../redux/blog.service";
+import { Link } from "react-router-dom";
+import ListLocation from "../../component/ListLocation/ListLocation";
 const cx = classNames.bind(styles)
 function NewsPage() {
-    const [listLocation, setListLocation] = useState(hotLocation.slice(0, 2))
-    const handleClickButton = () => {
-        setListLocation(hotLocation)
+    const { data } = useGetNewsQuery()
+    const [value, setValue] = useState('');
+    const handlChange = (e: string) => {
+        setValue(e)
     }
+    useEffect(() => {
+        console.log(value);
+    }, [value])
     return (
         <div className={cx("container")}>
             <div className={cx("intro")}>
@@ -27,32 +36,35 @@ function NewsPage() {
             <News />
 
             <div className={cx("list")}>
-                <div className={cx("list-news")}></div>
-                <div className={cx("sidebar")}>
-                    <BrokerSlice />
-                    <div className={cx("hot-location")}>
-                        <h2>Thị trường BĐS tại các tỉnh / thành sôi động nhất</h2>
-
-                        <div className={cx("location-container")}>
-                            {listLocation.map(item => (
-                                <div key={item.id} className={cx("location-wrapper")}>
-                                    <div
-                                        className={cx("location-item")}
-                                        style={{ background: `url(${item.img})` }}
-                                        key={item.id}
-                                    >
-                                        <div className={cx("overlay")}>
-                                            <span>{item.title}</span>
+                <div className={cx("list-news")}>
+                    {
+                        data?.map(item => (
+                            <Link to={`/new/${item.id}`} key={item.id}>
+                                <div className={cx("newCard-mobie")}>
+                                    <div className={cx("new-img")}>
+                                        <img src={item.img} alt="err" />
+                                    </div>
+                                    <div className={cx("new-conten")}>
+                                        <div className={cx("conten-date")}>
+                                            21/02/2024
+                                        </div>
+                                        <div className={cx("conten-title")}>
+                                            {item.name}
+                                        </div>
+                                        <div className={cx("conten-intro")}>
+                                            {item.intro}
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-
-                        <div className={cx("button")} onClick={() => handleClickButton()}>
-                            <Button title="Xem thêm" primary={true} small={true} />
-                        </div>
+                            </Link>
+                        ))
+                    }
+                </div>
+                <div className={cx("sidebar")}>
+                    <div className={cx("broker")}>
+                        <BrokerSlice />
                     </div>
+                    <ListLocation />
                     <div className={cx("list-location")}>
                         <h2>Thị trường BĐS tại 10 tỉnh / thành phố lớn</h2>
 
@@ -74,6 +86,7 @@ function NewsPage() {
                     </div>
                 </div>
             </div>
+            <ReactQuill theme="snow" value={value} onChange={e => handlChange(e)} />
         </div>
     );
 }

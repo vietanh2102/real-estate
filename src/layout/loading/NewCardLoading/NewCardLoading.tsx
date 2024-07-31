@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import styles from "./NewLoading.module.scss"
+import styles from "./NewCardLoading.module.scss"
 import Skeleton from "react-loading-skeleton";
 
 const cx = classNames.bind(styles)
