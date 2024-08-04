@@ -16,8 +16,8 @@ function Home() {
             <LocationPost />
             <Post />
             {/* <Count /> */}
-            <Intro />
             <Brand />
+            <Intro />
         </div>
     );
 }
