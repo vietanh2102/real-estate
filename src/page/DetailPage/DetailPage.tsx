@@ -22,7 +22,7 @@ import BrokerSlice from "../../component/BrokerSlice/BrokerSlice";
 import SidebarBox from "../../component/SidebarBox/SidebarBox";
 import { projectList, utilsList } from "../../constant/array";
 import DetailPageLoading from "../../layout/loading/DetailPageLoading/DetailPageLoading";
-// import { toTopPage } from "../../hooks/scrollTop"
+import { OPTION } from "../../constant";
 const cx = classNames.bind(styles);
 function DetailPage() {
   const { id } = useParams();
@@ -30,29 +30,8 @@ function DetailPage() {
   const [loading, setLoading] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
   const [isModalShow, setIsModalShow] = useState(false);
-  const option = [
-    {
-      id: 0,
-      tag: "Kết nối với tôi qua Zalo và gửi thêm thông tin chi tiết",
-      active: false,
-    },
-    {
-      id: 1,
-      tag: "Gửi cho tôi địa chỉ chi tiết và thông tin sổ đỏ",
-      active: false,
-    },
-    {
-      id: 2,
-      tag: "Gửi cho tôi báo giá chính xác nhé",
-      active: false,
-    },
-    {
-      id: 3,
-      tag: " Liên hệ với tôi nếu bất động sản này chưa được bán nhé",
-      active: false,
-    },
-  ];
-  const [tagOption, setTagOption] = useState(option);
+
+  const [tagOption, setTagOption] = useState(OPTION);
   const handleClickTag = (id: number) => {
     const updateActive = tagOption.map((item) =>
       item.id === id ? { ...item, active: !item.active } : { ...item }

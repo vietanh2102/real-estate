@@ -10,10 +10,10 @@ import { toTopPage } from "../../hooks/scrollTop";
 
 const cx = classNames.bind(styles);
 interface Props {
-  location: string;
+  location: string | undefined;
 }
 function SimilarList({ location }: Props) {
-  const { data } = useGetSimilarPostQuery(location);
+  const { data } = useGetSimilarPostQuery(String(location));
   return (
     <div className={cx("wrapper")}>
       <h1 className={cx("title")}>Bất động sản dành cho bạn</h1>
