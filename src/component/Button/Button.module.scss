@@ -1,6 +1,5 @@
 .button {
     width: 100%;
-    margin: 8px 16px;
     padding: 5px 11px;
     border-radius: 4px;
     font-size: 14px;
@@ -29,5 +28,13 @@
 .blueButton {
     background-color: #009BA1;
     border: 1px solid #009BA1;
+    color: white;
+}
+
+.redButton {
+    background-color: #E03C31;
+    ;
+    border: 1px solid #E03C31;
+    ;
     color: white;
 }

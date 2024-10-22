@@ -64,6 +64,10 @@
     display: none;
 }
 
+.button {
+    display: none;
+}
+
 .menu {
 
 
@@ -167,6 +171,10 @@
 
     .navbar-logo {
         flex: none;
+    }
+
+    .button {
+        display: block;
     }
 
     .menu {

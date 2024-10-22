@@ -90,9 +90,7 @@ function ContactPage() {
                             </span>
                         </div>
                     </form>
-                    <div className={cx("button")}>
-                        <Button title="Gửi" blueButton />
-                    </div>
+                    <Button title="Gửi" blueButton />
                 </div>
             </div>
             <Intro />

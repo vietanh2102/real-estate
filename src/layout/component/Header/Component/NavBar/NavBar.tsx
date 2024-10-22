@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.scss'
 import InputSearch from '../InputSearch/InputSearch';
+import Button from '../../../../../component/Button/Button';
 
 
 const cx = classNames.bind(styles)
@@ -36,6 +37,12 @@ function NavBar() {
                         <li className={cx('navbar-item')}><Link to={'/lien-he'}>Liên hệ</Link></li>
                     </ul>
                 </div>
+                {/* {button} */}
+                <Link to={"/login"}>
+                    <div className={cx("button")}>
+                        <Button title='Đăng bài' primary redButton={true} />
+                    </div>
+                </Link>
                 {/* {responsive} */}
                 <div className={cx("menu")}>
                     <div className={cx("menu-icon")}>

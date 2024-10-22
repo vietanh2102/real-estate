@@ -1,0 +1,95 @@
+.wrapper {
+    padding: 64px 32px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+
+}
+
+.aside {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: rgb(255, 236, 235);
+    padding-left: 24px;
+    padding-top: 32px;
+
+    width: 336px;
+    overflow-x: hidden;
+    display: none;
+}
+
+.logo {
+    width: 160px;
+}
+
+.resgiter {
+    width: 100%;
+}
+
+.input-item {
+    width: 100%;
+    border: 1px solid #1C2D37;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 16px;
+    display: flex;
+    position: relative;
+
+    input {
+        width: 100%;
+        height: 38px;
+        padding-left: 16px;
+        outline: none;
+        border: none;
+    }
+}
+
+.contact-icon {
+    position: absolute;
+    right: 16px;
+}
+
+.err-mess {
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(224, 60, 49);
+    height: 16px;
+}
+
+.note {
+    margin-top: 24px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(153, 153, 153);
+}
+
+.text-red {
+    color: #E03C31;
+}
+
+@media (min-width: 1024px) {
+    .main {
+        min-height: 576px;
+    }
+
+    .aside {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resgiter {
+        padding: 32px;
+        width: 464px;
+        background-color: white;
+        box-shadow: rgba(44, 44, 44, 0.08) 0px 4px 16px;
+        border-radius: 8px;
+    }
+}
